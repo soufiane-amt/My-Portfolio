@@ -14,19 +14,19 @@ export default function GeneralScrollSpy ()
  
             <div>
                 <ul className="navbar-nav  d-flex justify-content-between ">
-                    <li className="nav-item h2 px-4 ">
+                    <li className="nav-item h2 px-4 fw-bold">
                         <a className="nav-link text-white" href="#home">Home</a> {/* Apply Bootstrap utility class */}
                     </li>
-                    <li className="nav-item h2 px-4 ">
+                    <li className="nav-item h2 px-4 fw-bold">
                         <a className="nav-link text-white" href="#about">About</a>
                     </li>
-                    <li className="nav-item h2 px-4 ">
+                    <li className="nav-item h2 px-4 fw-bold">
                         <a className="nav-link text-white" href="#services">Services</a>
                     </li>
-                    <li className="nav-item h2 px-4 ">
+                    <li className="nav-item h2 px-4 fw-bold">
                         <a className="nav-link text-white" href="#portfolio">Portfolio</a>
                     </li>
-                    <li className="nav-item h2 px-4 ">
+                    <li className="nav-item h2 px-4 fw-bold">
                         <a className="nav-link text-white" href="#awards">Awards</a>
                     </li>
                 </ul>
