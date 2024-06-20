@@ -53,8 +53,8 @@ function Introduction()
 
     return (
         <div className={`${style.home_main} position-absolute start-50 bottom-50 translate-middle d-flex flex-column align-items-center `}>
-            <h1 className={`text-white ${style.intr_size}`}>I am Soufiane Amajat</h1>
-            <div className={`${style.current_text} text-white`}>
+            <h2 className={`text-white ${style.intr_size}`}>I am Soufiane Amajat</h2>
+            <div className={`${style.typing_text} text-white`}>
                 {currentDisplayedText}
 
                 <span className={currentDisplayedText.length == texts[currentIndexText].length ? style.blinking_cursor : style.non_blinking_cursor}>&nbsp;</span>

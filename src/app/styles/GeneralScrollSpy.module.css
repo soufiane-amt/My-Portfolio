@@ -1,12 +1,11 @@
 .custom_btn_style{
     color: var(--main_color);
     border: 2px solid var(--main_color);
-    width: 240px;
-    height: 80px;
+    font-size: 15px;
     font-weight: bold;
-    font-size: 28px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
+    padding: 10px 20px;
 }
 
 .custom_btn_style:hover{
