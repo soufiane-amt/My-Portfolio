@@ -8,13 +8,13 @@ import Home from "./components/Home";
 
 export default function MainPage() {
   return (
-    <main className="container-fluid">
-      <div >
-        <div >
-          <GeneralScrollSpy />
-          <Home />
-        </div>
-      </div>
-    </main>
+    <div >
+      <header>
+          <GeneralScrollSpy/>
+      </header>
+      <main className="container-fluid p-0">
+        <Home />
+      </main>
+    </div>
   );
 }

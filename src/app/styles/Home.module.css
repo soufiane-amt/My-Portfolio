@@ -1,0 +1,52 @@
+.dimmed_image {
+    filter: brightness(45%);
+  }
+  
+.intr_size{
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.current_text{
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+}
+
+.home_main{
+    height: 50px;
+    width: 100vw;
+}
+
+.typing_text {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  overflow: hidden; /* Ensures text doesn't overflow container */
+  border-right: .15em solid orange; /* Cursor animation */
+  white-space: nowrap; /* Prevents text from wrapping */
+  margin: 0; /* Ensures no margin */
+  padding: 10px; /* Adds padding for better appearance */
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+
+}
+
+.non_blinking_cursor {
+  width: 7px;
+  background-color: white; /* Adjust cursor color to match text color */
+}
+
+.blinking_cursor {
+  width: 7px;
+  background-color: white; /* Adjust cursor color to match text color */
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}

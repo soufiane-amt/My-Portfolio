@@ -1,8 +1,14 @@
 :root {
-  --general_bg_color: #091d42;
+  /* --general_bg_color: #091d42; */
+  --general_bg_color: #000000;
   --main_color: #2CD97B;
 }
 
 .bg_general_color {
   background-color: var(--general_bg_color);
+}
+
+/* globals.css */
+main {
+  margin-top: 100px; /* Adjust this value to match the height of your navbar */
 }
