@@ -1,5 +1,6 @@
 .dimmed_image {
-    filter: brightness(45%);
+  z-index: 0; /* Ensures the image stays in the background */
+  filter: brightness(45%);
   }
   
 .intr_size{
@@ -31,6 +32,11 @@
   width: 7px;
   background-color: white; /* Adjust cursor color to match text color */
   animation: blink 1s step-start infinite;
+}
+
+.home_styling{
+  background-color: rgb(0, 0, 0);
+  /* z-index: -1; */
 }
 
 @keyframes blink {

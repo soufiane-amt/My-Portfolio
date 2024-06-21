@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '@public/NavBar/logo.png';
 import Image from 'next/image';
 import  style from '../styles/Home.module.css';
-import MainBackImg from '@public/myPic1.jpg';
+import MainBackImg from '@public/myPic.jpg';
 import { useEffect, useState } from 'react';
 import internal from 'stream';
 
@@ -68,8 +68,11 @@ function Introduction()
 export default function Home ()
 {
     return (
-        <div className='position-relative'>
-            <Image src={MainBackImg} alt="My picture" className={`img-fluid w-100 ${style.dimmed_image}`} />
+        <div className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center home_styling`}>
+            <Image src={MainBackImg} 
+                    alt="My picture" 
+                    className={`img-fluid w-50  ${style.dimmed_image}`} 
+                    />
             <Introduction/>
         </div>
     )

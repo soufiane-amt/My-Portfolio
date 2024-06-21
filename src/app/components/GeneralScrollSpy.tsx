@@ -1,52 +1,53 @@
-"use client"
+"use client";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '@public/NavBar/logo.png';
 import Image from 'next/image';
-import  style from '../styles/GeneralScrollSpy.module.css';
+import style from '../styles/GeneralScrollSpy.module.css';
+import { useState } from 'react';
 
-function HumburgerButton()
-{
+function HumburgerButton() {
     return (
-        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>                        
-      </button>
-    )
+        <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+        </button>
+    );
 }
 
-export default function GeneralScrollSpy ()
-{
-    return (
-        <nav className="navbar navbar-expand-sm bg_general_color navbar-dark fixed-top d-flex justify-content-around py-5">
-            <div>
-                <Image src={profilePic} alt="Logo" width={100} height={55}/>
-            </div>
-            <div>
-                <ul className="navbar-nav  d-flex justify-content-between ">
-                    <li className="nav-item h5 px-4 fw-bold">
-                        <a className="nav-link text-white" href="#home">Home</a> {/* Apply Bootstrap utility class */}
-                    </li>
-                    <li className="nav-item h5 px-4 fw-bold">
-                        <a className="nav-link text-white" href="#about">About</a>
-                    </li>
-                    <li className="nav-item h5 px-4 fw-bold">
-                        <a className="nav-link text-white" href="#services">Services</a>
-                    </li>
-                    <li className="nav-item h5 px-4 fw-bold">
-                        <a className="nav-link text-white" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li className="nav-item h5 px-4 fw-bold">
-                        <a className="nav-link text-white" href="#awards">Awards</a>
-                    </li>
-                </ul>
-            </div>
+export default function GeneralScrollSpy() {
+    const [expanded, setExpanded] = useState(false);
 
-            <div>
-                <button className={`btn  ${style.custom_btn_style} `}>
-                    Appointment
-                </button>
+    return (
+        <nav className="navbar navbar-expand-xxl bg_general_color navbar-dark fixed-top py-5">
+            <div className="container-fluid d-flex justify-content-around align-items-center mx-5">
+                <div>
+                    <Image src={profilePic} alt="Logo" width={100} height={55} />
+                </div>
+                <HumburgerButton />
+                <div className={`collapse navbar-collapse ${expanded ? 'show' : ''}`} id="navbarNav">
+                    <ul className="navbar-nav  d-flex justify-content-center w-100">
+                        <li className="nav-item h5 px-5 fw-bold">
+                            <a className="nav-link text-white" href="#home">Home</a>
+                        </li>
+                        <li className="nav-item h5 px-5 fw-bold">
+                            <a className="nav-link text-white" href="#about">About</a>
+                        </li>
+                        <li className="nav-item h5 px-5 fw-bold">
+                            <a className="nav-link text-white" href="#services">Services</a>
+                        </li>
+                        <li className="nav-item h5 px-5 fw-bold">
+                            <a className="nav-link text-white" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li className="nav-item h5 px-5 fw-bold">
+                            <a className="nav-link text-white" href="#awards">Awards</a>
+                        </li>
+                    </ul>
+                <div>
+                    <button className={`btn ${style.custom_btn_style}`}>
+                        Appointment
+                    </button>
+                </div>
+                </div>
             </div>
         </nav>
-    )
+    );
 }
