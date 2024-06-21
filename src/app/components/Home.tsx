@@ -63,17 +63,33 @@ function Introduction()
     )
 }
 
+export default function Home() {
+    const [imageWidth, setImageWidth] = useState(50); // Initial width percentage
 
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            const reductionFactor = Math.floor((screenWidth - 100) / 200); // Calculate how many times the screen has reduced by 200px
+            const newWidth = Math.max(20, 50 - reductionFactor * 6); // Decrease width by 5% per 200px reduction
+            setImageWidth(newWidth);
+        };
 
-export default function Home ()
-{
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
-        <div className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center home_styling`}>
-            <Image src={MainBackImg} 
-                    alt="My picture" 
-                    className={`img-fluid w-50  ${style.dimmed_image}`} 
-                    />
-            <Introduction/>
+        <div className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>
+            <Image
+                src={MainBackImg}
+                alt="My picture"
+                className={`img-fluid ${style.dimmed_image}`}
+                style={{ width: `${imageWidth}%` }}
+            />
         </div>
-    )
+    );
 }

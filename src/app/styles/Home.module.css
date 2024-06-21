@@ -1,6 +1,8 @@
 .dimmed_image {
   z-index: 0; /* Ensures the image stays in the background */
   filter: brightness(45%);
+  height: 100vh;
+  /* width: 50%; */
   }
   
 .intr_size{
@@ -36,8 +38,47 @@
 
 .home_styling{
   background-color: rgb(0, 0, 0);
-  /* z-index: -1; */
 }
+
+/* @media (max-width: 1375px) {
+  .dimmed_image {
+    width: 60%; 
+}
+}
+
+
+@media (max-width: 1133px) {
+  .dimmed_image {
+    width: 65%; 
+}
+}
+
+@media (max-width: 1053px) {
+  .dimmed_image {
+    width: 70%; 
+}
+}
+
+
+@media (max-width: 768px) {
+  .dimmed_image {
+    width: 90%; 
+    height: 100%;
+}
+}
+
+@media (max-width: 576px) {
+  .dimmed_image {
+      width: 70%; 
+      height: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .dimmed_image {
+      width: 100%;
+  }
+} */
 
 @keyframes blink {
   50% {
