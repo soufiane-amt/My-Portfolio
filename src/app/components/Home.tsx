@@ -32,9 +32,6 @@ function Introduction()
                 }, 10); // Delay before moving to the next phrase (adjust as needed)
             }
             else{
-                const cursorAnimation = () =>{
-
-                }
                 clearInterval(interval)
                 setTimeout(() => {
                     setCurrentIndexText(prevIndex => (prevIndex + 1) % texts.length);
@@ -64,23 +61,6 @@ function Introduction()
 }
 
 export default function Home() {
-    const [imageWidth, setImageWidth] = useState(50); // Initial width percentage
-
-    useEffect(() => {
-        const handleResize = () => {
-            const screenWidth = window.innerWidth;
-            const reductionFactor = Math.floor((screenWidth - 100) / 200); // Calculate how many times the screen has reduced by 200px
-            const newWidth = Math.max(20, 50 - reductionFactor * 6); // Decrease width by 5% per 200px reduction
-            setImageWidth(newWidth);
-        };
-
-        window.addEventListener('resize', handleResize);
-        handleResize();
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     return (
         <div className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>
@@ -88,8 +68,8 @@ export default function Home() {
                 src={MainBackImg}
                 alt="My picture"
                 className={`img-fluid ${style.dimmed_image}`}
-                style={{ width: `${imageWidth}%` }}
             />
+            <Introduction/>
         </div>
     );
 }

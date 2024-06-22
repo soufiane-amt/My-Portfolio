@@ -18,7 +18,7 @@ export default function GeneralScrollSpy() {
 
     return (
         <nav className="navbar navbar-expand-xxl bg_general_color navbar-dark fixed-top py-5">
-            <div className="container-fluid d-flex justify-content-around align-items-center mx-5">
+            <div className={`container-fluid d-flex  align-items-center mx-5 ${style.containerFluid}`}>
                 <div>
                     <Image src={profilePic} alt="Logo" width={100} height={55} />
                 </div>
