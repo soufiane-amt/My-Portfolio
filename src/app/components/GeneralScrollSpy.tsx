@@ -17,32 +17,32 @@ export default function GeneralScrollSpy() {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <nav className="navbar navbar-expand-xxl bg_general_color navbar-dark fixed-top py-5">
+        <nav className="navbar navbar-expand-md bg_general_color navbar-dark fixed-top py-5">
             <div className={`container-fluid d-flex  align-items-center mx-5 ${style.containerFluid}`}>
                 <div>
-                    <Image src={profilePic} alt="Logo" width={100} height={55} />
+                    <Image src={profilePic} alt="Logo" />
                 </div>
                 <HumburgerButton />
                 <div className={`collapse navbar-collapse ${expanded ? 'show' : ''}`} id="navbarNav">
                     <ul className="navbar-nav  d-flex justify-content-center w-100">
-                        <li className="nav-item h5 px-5 fw-bold">
+                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className="nav-link text-white" href="#home">Home</a>
                         </li>
-                        <li className="nav-item h5 px-5 fw-bold">
+                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className="nav-link text-white" href="#about">About</a>
                         </li>
-                        <li className="nav-item h5 px-5 fw-bold">
+                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className="nav-link text-white" href="#services">Services</a>
                         </li>
-                        <li className="nav-item h5 px-5 fw-bold">
+                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className="nav-link text-white" href="#portfolio">Portfolio</a>
                         </li>
-                        <li className="nav-item h5 px-5 fw-bold">
+                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className="nav-link text-white" href="#awards">Awards</a>
                         </li>
                     </ul>
                 <div>
-                    <button className={`btn ${style.custom_btn_style}`}>
+                    <button className={` ${style.custom_btn_style}`}>
                         Appointment
                     </button>
                 </div>
