@@ -14,3 +14,15 @@
     background-color: var(--main_color);
     color: var(--general_bg_color);
 }
+
+.dropdown_menu {
+    display: none;
+    opacity: 0;
+    transition: display 0s, opacity 0.3s ease;
+    }
+  
+  .dropdown_menu_show {
+    display: block;
+    opacity: 1;
+    }
+  

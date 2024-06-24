@@ -5,26 +5,38 @@ import Image from 'next/image';
 import style from '../styles/GeneralScrollSpy.module.css';
 import { useState } from 'react';
 
-function HumburgerButton() {
+type ClickHandler = () => void;
+
+function HumburgerButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
     return (
-        <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            onClick={toggleNavbar}>
             <span className="navbar-toggler-icon"></span>
         </button>
     );
 }
 
+function CloseButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
+    return (
+        <button type="button" className="btn-close text-reset btn-close-white" aria-label="Close" onClick={toggleNavbar}></button>
+    );
+}
+
 export default function GeneralScrollSpy() {
     const [expanded, setExpanded] = useState(false);
-
+    const toggleNavbar:ClickHandler = () => {
+        setExpanded(!expanded);
+    };
+    
     return (
         <nav className="navbar navbar-expand-md bg_general_color navbar-dark fixed-top py-5">
             <div className={`container-fluid d-flex  align-items-center mx-5 ${style.containerFluid}`}>
                 <div>
                     <Image src={profilePic} alt="Logo" />
                 </div>
-                <HumburgerButton />
+                {!expanded ? <HumburgerButton toggleNavbar={toggleNavbar}/>: <CloseButton toggleNavbar={toggleNavbar}/>}
                 <div className={`collapse navbar-collapse ${expanded ? 'show' : ''}`} id="navbarNav">
-                    <ul className="navbar-nav  d-flex justify-content-center w-100">
+                    <ul className={`navbar-nav  d-flex justify-content-center w-100`}>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className="nav-link text-white" href="#home">Home</a>
                         </li>
@@ -46,6 +58,7 @@ export default function GeneralScrollSpy() {
                         Appointment
                     </button>
                 </div>
+                
                 </div>
             </div>
         </nav>
