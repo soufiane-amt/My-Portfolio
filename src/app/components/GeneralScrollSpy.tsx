@@ -29,15 +29,15 @@ export default function GeneralScrollSpy() {
     };
     
     return (
-        <nav className={`navbar navbar-expand-md bg_general_color navbar-dark fixed-top  ${expanded? "py-5 pb-0" : "py-5"}`}>
+        <nav className={`navbar navbar-expand-md bg_general_color navbar-dark fixed-top py-5`}>
             <div className={`container-fluid d-flex  align-items-center mx-5 ${style.containerFluid}`}>
                 <div>
                     <Image src={profilePic} alt="Logo" />
                 </div>
                 {!expanded ? <HumburgerButton toggleNavbar={toggleNavbar}/>: <CloseButton toggleNavbar={toggleNavbar}/>}
-                <div className={`collapse navbar-collapse ${expanded ? 'show' : ''} `} id="navbarNav">
-                    <ul className={`navbar-nav  d-flex justify-content-center w-100 ${expanded ? `bg-white  ${style.bd_radius_top} ` : ''} `}>
-                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
+                <div className={`collapse navbar-collapse position-relative ${style.top_vh_10} ${expanded ? 'show' : ''} `} id="navbarNav">
+                    <ul className={` navbar-nav  d-flex justify-content-center w-100 ${expanded ? `bg-white  ${style.bd_radius_6_px} ` : ''} `}>
+                    <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#home">Home</a>
                         </li>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
@@ -51,8 +51,8 @@ export default function GeneralScrollSpy() {
                         </li>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#awards">Awards</a>
-                        </li>
-                        {expanded && (
+                        </li> 
+                         {expanded && (
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
                             <button className={`nav-link text-dark`}>
                                 Appointment
@@ -65,7 +65,7 @@ export default function GeneralScrollSpy() {
                                 Appointment
                             </button>
                         </div>
-                        )}
+                        )} 
                 
                 </div>
             </div>

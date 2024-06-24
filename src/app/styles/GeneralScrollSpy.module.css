@@ -1,3 +1,14 @@
+/* GeneralScrollSpy.module.css */
+.top_vh_10{
+    top: 10vh;
+}
+.customNavbar {
+    /* Remove any unwanted borders or margins */
+    border: none !important;
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+}
+
 .custom_btn_style{
     color: var(--main_color);
     border: 2px solid var(--main_color);
@@ -15,13 +26,8 @@
     color: var(--general_bg_color);
 }
 
-.bd_radius_top{
-    border-top-right-radius: 6px;
-    border-top-left-radius: 6px;
-}
-.bd_radius_bottom{
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
+.bd_radius_6_px{
+    border-radius: 6px;
 }
 
 .dropdown_menu {
