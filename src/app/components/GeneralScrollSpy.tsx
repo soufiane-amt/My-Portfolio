@@ -29,7 +29,7 @@ export default function GeneralScrollSpy() {
     };
     
     return (
-        <nav className="navbar navbar-expand-md bg_general_color navbar-dark fixed-top py-5">
+        <nav className={`navbar navbar-expand-md bg_general_color navbar-dark fixed-top  ${expanded? "py-5 pb-0" : "py-5"}`}>
             <div className={`container-fluid d-flex  align-items-center mx-5 ${style.containerFluid}`}>
                 <div>
                     <Image src={profilePic} alt="Logo" />
@@ -53,19 +53,19 @@ export default function GeneralScrollSpy() {
                             <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#awards">Awards</a>
                         </li>
                         {expanded && (
-                            <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
-                                <button className={`nav-link text-dark`}>
-                                    Appointment
-                                </button>
-                            </li>
-                            )}
-                    </ul>
-                    {!expanded && (<div className={`${expanded ? `bg-white ${style.bd_radius_bottom} py-1` : ''}`}>
-                        <button className={` ${style.custom_btn_style} ${expanded ? 'bg-white ' : ''}`}>
-                            Appointment
-                        </button>
-                    </div>
-                    )}
+                        <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
+                            <button className={`nav-link text-dark`}>
+                                Appointment
+                            </button>
+                        </li>
+                        )}
+                        </ul>
+                        {!expanded && (<div>
+                            <button className={` ${style.custom_btn_style}`}>
+                                Appointment
+                            </button>
+                        </div>
+                        )}
                 
                 </div>
             </div>
