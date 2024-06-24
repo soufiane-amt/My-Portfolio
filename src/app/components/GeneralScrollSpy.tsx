@@ -35,29 +35,37 @@ export default function GeneralScrollSpy() {
                     <Image src={profilePic} alt="Logo" />
                 </div>
                 {!expanded ? <HumburgerButton toggleNavbar={toggleNavbar}/>: <CloseButton toggleNavbar={toggleNavbar}/>}
-                <div className={`collapse navbar-collapse ${expanded ? 'show' : ''}`} id="navbarNav">
-                    <ul className={`navbar-nav  d-flex justify-content-center w-100`}>
+                <div className={`collapse navbar-collapse ${expanded ? 'show' : ''} `} id="navbarNav">
+                    <ul className={`navbar-nav  d-flex justify-content-center w-100 ${expanded ? `bg-white  ${style.bd_radius_top} ` : ''} `}>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
-                            <a className="nav-link text-white" href="#home">Home</a>
+                            <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#home">Home</a>
                         </li>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
-                            <a className="nav-link text-white" href="#about">About</a>
+                            <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#about">About</a>
                         </li>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
-                            <a className="nav-link text-white" href="#services">Services</a>
+                            <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#services">Services</a>
                         </li>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
-                            <a className="nav-link text-white" href="#portfolio">Portfolio</a>
+                            <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#portfolio">Portfolio</a>
                         </li>
                         <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
-                            <a className="nav-link text-white" href="#awards">Awards</a>
+                            <a className={`nav-link ${expanded ? 'text-dark' : 'text-white'}`} href="#awards">Awards</a>
                         </li>
+                        {expanded && (
+                            <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
+                                <button className={`nav-link text-dark`}>
+                                    Appointment
+                                </button>
+                            </li>
+                            )}
                     </ul>
-                <div>
-                    <button className={` ${style.custom_btn_style}`}>
-                        Appointment
-                    </button>
-                </div>
+                    {!expanded && (<div className={`${expanded ? `bg-white ${style.bd_radius_bottom} py-1` : ''}`}>
+                        <button className={` ${style.custom_btn_style} ${expanded ? 'bg-white ' : ''}`}>
+                            Appointment
+                        </button>
+                    </div>
+                    )}
                 
                 </div>
             </div>
