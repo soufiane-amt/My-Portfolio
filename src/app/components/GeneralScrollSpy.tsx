@@ -23,7 +23,7 @@ function CloseButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
 }
 
 export default function GeneralScrollSpy() {
-    const [currentPage, currentPage] = useState(false);
+    const [currentPage, setCurrentPage] = useState<string>("");
     const [expanded, setExpanded] = useState<boolean>(false);
     const toggleNavbar:ClickHandler = () => {
         setExpanded(!expanded);
@@ -42,9 +42,14 @@ export default function GeneralScrollSpy() {
         };
     }, [expanded]);
 
-    
+    const handleButtonClick = (e:any)=>{
+            const hrefValue = e.target.getAttribute('href').substring(1);
+            console.log (hrefValue)
+            setCurrentPage(hrefValue);
+    }
+
     return (
-        <nav className={`navbar navbar-expand-md bg_general_color navbar-dark fixed-top py-4`}>
+        <nav className={`navbar navbar-expand-lg bg_general_color navbar-dark fixed-top py-4`}>
             <div className={`container-fluid d-flex  align-items-center mx-5 ${style.containerFluid}`}>
                 <div>
                     <Image src={profilePic} alt="Logo" />
@@ -53,22 +58,22 @@ export default function GeneralScrollSpy() {
                 <div className={`collapse navbar-collapse position-relative  ${expanded ? `show ${style.top_vh_10}` : ''} `} id="navbarNav">
                     <ul className={` navbar-nav  d-flex justify-content-center w-100  ${expanded ? `bg-white  ${style.bd_radius_6_px} ps-3 py-2 ` : ''} `}>
                         <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
-                                <a className={`nav-link ${style.hover_button} ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
+                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "home" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
                             </li>
                             <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
-                                <a className={`nav-link ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
+                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
                             </li>
                             <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
-                                <a className={`nav-link ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Services</a>
+                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "services" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Services</a>
                             </li>
                             <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
-                                <a className={`nav-link ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
+                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "portfolio" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
                             </li>
                             <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
-                                <a className={`nav-link ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#awards">Awards</a>
+                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "awards" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#awards">Awards</a>
                             </li> 
                             {expanded && (
-                            <li className={`nav-item px-1 fw-bold ${style.fw_17}`}>
+                            <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
                                 <button className={`nav-link text-dark`}>
                                     Appointment
                                 </button>

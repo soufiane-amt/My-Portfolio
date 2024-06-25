@@ -67,3 +67,21 @@
 .hover_button_animation:hover::after {
     width: 100%;
 }
+
+.border_button_bottom{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.border_button_bottom::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    width: 100%;
+}
