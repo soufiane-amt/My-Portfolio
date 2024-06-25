@@ -12,32 +12,55 @@ const profileInfo = {
 }
 
 
+interface SkillDataType{
+    skillName:string, 
+    percentage: string,
+}
+function SkillBar ({skillData}: {skillData : SkillDataType}){
+    return (
+        <div>
+            <div className='f-flex justify-content-between'>
+                <label>{skillData.skillName}</label>
+                <span>{skillData.percentage}%</span>
+            </div>
+            <div className={`progress my-3 ${style.h_10px} rounded-0`}>
+                <div className="progress-bar " style={{width:`${skillData.percentage}%`}}></div>
+            </div>
+        </div>
+    )
+}
+
 function AboutSkills (){
 
     return (
         <div>
             <h5 className={`${style.fw_18} fw-bold`}>Skills</h5>
-            <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar" style={{width:'10%'}}></div>
+            <SkillBar skillData={{skillName:"HTML", percentage: "70"}} />
+            {/* <div className={`progress my-3 ${style.h_10px} rounded-0`}>
+                <div className='f-flex justify-content-between'>
+                    <label>HTML</label>
+                    <span>75%</span>
+                </div>
+                <div className="progress-bar " style={{width:'10%'}}></div>
+            </div> */}
+            {/* <div className={`progress my-3 ${style.h_10px} rounded-0`}>
+                <div className="progress-bar  bg-success" style={{width:'20%'}}></div>
             </div>
             <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar bg-success" style={{width:'20%'}}></div>
+                <div className="progress-bar  bg-info" style={{width:'30%'}}></div>
             </div>
             <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar bg-info" style={{width:'30%'}}></div>
+                <div className="progress-bar  bg-warning" style={{width:'40%'}}></div>
             </div>
             <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar bg-warning" style={{width:'40%'}}></div>
+                <div className="progress-bar  bg-danger" style={{width:'50%'}}></div>
             </div>
             <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar bg-danger" style={{width:'50%'}}></div>
+                <div className="progress-bar  bg-secondary" style={{width:'70%'}}></div>
             </div>
             <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar bg-secondary" style={{width:'70%'}}></div>
-            </div>
-            <div className={`progress my-3 ${style.h_10px} rounded-0`}>
-                <div className="progress-bar bg-dark" style={{width:'90%'}}></div>
-            </div>
+                <div className="progress-bar  bg-dark" style={{width:'90%'}}></div>
+            </div> */}
         </div>
     )
 }
