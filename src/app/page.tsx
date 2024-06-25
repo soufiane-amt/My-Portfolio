@@ -4,16 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import GeneralScrollSpy from "./components/GeneralScrollSpy";
 import Home from "./components/Home";
+import About from "./components/About";
 
 
 export default function MainPage() {
   return (
     <div >
-      <header>
+      {/* <header>
           <GeneralScrollSpy/>
-      </header>
+      </header> */}
       <main className="container-fluid p-0">
-        <Home />
+        {/* <Home /> */}
+        <About/>
       </main>
     </div>
   );

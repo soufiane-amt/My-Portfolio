@@ -1,0 +1,21 @@
+.fw_16{
+    font-weight: 16px;
+}
+
+.fw_18{
+    font-weight: 18px;
+}
+
+.ml_30px{
+    margin-left: 27px;
+}
+
+.h_10px{
+    height: 10px;
+}
+
+.text_light_black {
+    color : rgb(78, 78, 78);
+}
+
+/* GeneralScrollSpy.module.css */
