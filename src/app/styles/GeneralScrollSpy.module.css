@@ -41,3 +41,29 @@
     opacity: 1;
     }
   
+
+    /* General button styling */
+.hover_button_animation {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Pseudo-element for the underline */
+.hover_button_animation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+/* Hover effect */
+.hover_button_animation:hover::after {
+    width: 100%;
+}
