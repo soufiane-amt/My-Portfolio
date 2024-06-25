@@ -49,9 +49,9 @@ function Introduction()
 
 
     return (
-        <div className={`${style.home_main} position-absolute start-50 bottom-50 translate-middle d-flex flex-column align-items-center `}>
-            <h2 className={`text-white ${style.intr_size}`}>I am Soufiane Amajat</h2>
-            <div className={`${style.typing_text} text-white`}>
+        <div className={` ${style.home_main} position-absolute start-50 bottom-50 translate-middle d-flex flex-column align-items-center `}>
+            <h2 className={` fade_in_element_3_s text-white ${style.intr_size}`}>I am Soufiane Amajat</h2>
+            <div className={` ${style.typing_text} text-white`}>
                 {currentDisplayedText}
 
                 <span className={currentDisplayedText.length == texts[currentIndexText].length ? style.blinking_cursor : style.non_blinking_cursor}>&nbsp;</span>
@@ -67,7 +67,7 @@ export default function Home() {
             <Image
                 src={MainBackImg}
                 alt="My picture"
-                className={`img-fluid ${style.dimmed_image}`}
+                className={`img-fluid fade_in_element_5_s ${style.dimmed_image}`}
             />
             <Introduction/>
         </div>
