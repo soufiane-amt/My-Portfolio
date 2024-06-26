@@ -10,11 +10,11 @@ import About from "./components/About";
 export default function MainPage() {
   return (
     <div >
-      {/* <header>
+      <header>
           <GeneralScrollSpy/>
-      </header> */}
+      </header>
       <main className="container-fluid p-0 bg-white">
-        {/* <Home /> */}
+        <Home />
         <About/>
       </main>
     </div>

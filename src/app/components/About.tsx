@@ -81,7 +81,7 @@ function AboutMe(){
     return (
         <div className='bg-white' >
             <h5 className={`${style.fw_28} ${style.f_famil_raleway} fw-bold border-bottom border-primary border-5 mb-4`}>About me</h5>
-            <p>
+            <p className={`${style.f_famil_roboto} ${style.fw_18} ${style.text_light_black}`}>
                 Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
                 Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. porttitor at sem.
                 Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
@@ -92,7 +92,7 @@ function AboutMe(){
 function About ()
 {
     return(
-        <div className='container rounded  shadow-lg p-4 '>
+        <div className='container rounded  shadow-lg p-4 mt-5'>
             <div className='row'>
                 <div className='col-6'>
                     <AboutContacts/>
