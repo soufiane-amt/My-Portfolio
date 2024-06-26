@@ -72,20 +72,7 @@ export default function GeneralScrollSpy() {
                             <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
                                 <a onClick={handleButtonClick} className={`nav-link ${currentPage == "awards" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#awards">Awards</a>
                             </li> 
-                            {expanded && (
-                            <li className={`nav-item px-3 fw-bold ${style.fw_17}`}>
-                                <button className={`nav-link text-dark`}>
-                                    Appointment
-                                </button>
-                            </li>
-                            )}
                         </ul>
-                        {!expanded && (<div>
-                            <button className={` ${style.custom_btn_style}`}>
-                                Appointment
-                            </button>
-                        </div>
-                        )} 
                 
                 </div>
             </div>
