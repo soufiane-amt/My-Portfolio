@@ -92,7 +92,7 @@ function AboutMe(){
 function About ()
 {
     return(
-        <div className='container rounded  shadow-lg p-4 mt-5'>
+        <div className='container rounded  shadow-lg p-4 my-5'>
             <div className='row'>
                 <div className='col-6'>
                     <AboutContacts/>

@@ -71,7 +71,7 @@ export default function GeneralScrollSpy() {
                 </div>
                 {!expanded ? <HumburgerButton toggleNavbar={toggleNavbar}/>: <CloseButton toggleNavbar={toggleNavbar}/>}
                 <div className={`collapse navbar-collapse position-relative  ${expanded ? `show ${style.top_vh_10}` : ''} `} id="navbarNav">
-                    <ul className={`${style.fw_15_px} navbar-nav  d-flex justify-content-end w-100  ${expanded ? `bg-white  ${style.bd_radius_6_px} ps-3 py-2 ` : ''} `}>
+                    <ul className={`${style.fw_14_px} navbar-nav  d-flex justify-content-end w-100  ${expanded ? `bg-white  ${style.bd_radius_6_px} ps-3 py-2 ` : ''} `}>
                         <li className={`nav-item px-3    ${style.f_famil_poppins}`}>
                                 <a onClick={handleButtonClick} className={`nav-link ${currentPage == "home" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
                             </li>
