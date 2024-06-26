@@ -100,13 +100,13 @@ function About ()
                 <div className='col-md-6'>
                     <div className='d-flex flex-column'>
                         <AboutContacts />
-                        <AboutSkills />
+                        {/* <AboutSkills /> */}
                     </div>
                 </div>
 
-                <div className='col-6'>
+                {/* <div className='col-6'>
                     <AboutMe/>
-                </div>
+                </div> */}
             </div>
         </div>
     )
