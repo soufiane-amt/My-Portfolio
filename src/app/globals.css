@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 
 :root {
   /* --general_bg_color: #091d42; */
@@ -11,7 +13,9 @@
   background-color: var(--general_bg_color);
 }
 
-/* globals.css */
+body {
+  overflow-x: hidden;
+}
 main {
   margin-top: 90px; 
 }

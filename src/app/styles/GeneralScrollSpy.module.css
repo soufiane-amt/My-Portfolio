@@ -1,4 +1,17 @@
 /* GeneralScrollSpy.module.css */
+
+.fw_15_px{
+    font-size: 15px;
+}
+
+.fw_16_px{
+    font-size: 16px;
+}
+
+.f_famil_poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
 .top_vh_10{
     top: 10vh;
 }
@@ -46,7 +59,6 @@
 .hover_button_animation {
     position: relative;
     display: inline-block;
-    font-weight: bold;
     border: none;
     cursor: pointer;
 }
@@ -58,7 +70,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: #fff;
     transition: width 0.3s;
 }
@@ -81,7 +93,14 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: #fff;
     width: 100%;
 }
+
+.white_shadow {
+    -moz-box-shadow: 3px 2px 23px -15px  #FFFFFF;
+    -webkit-box-shadow: 3px 2px 23px -15px  #FFFFFF;
+     box-shadow: 3px 2px 23px -15px  #FFFFFF;
+  }
+  
