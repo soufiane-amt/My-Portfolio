@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImg from '@public/profile-img.jpg';
 import Image from 'next/image';
 import style from '../styles/About.module.css'
+import { useEffect, useRef } from 'react';
 
 const profileInfo = {
     name : "Soufiane Amajat",
@@ -50,7 +51,7 @@ function AboutSkills (){
 
 function ProfileInfo() {
     return (
-        <div className={`profile-info ${style.text_light_black} ${style.ml_24px} ${style.f_famil_roboto}`}>
+        <div className={`profile-info ${style.text_light_black}  ${style.f_famil_roboto}`}>
             <p><span className={` fw-bold ${style.fw_16_px}`}>Name:</span> {profileInfo.name}</p>
             <p><span className={`fw-bold ${style.fw_16_px}`}>Profile:</span> {profileInfo.profile}</p>
             <p><span className={`fw-bold ${style.fw_16_px}`}>Email:</span> {profileInfo.email}</p>
@@ -64,7 +65,7 @@ function AboutContacts ()
 {
 
     return (
-        <div className='d-flex '>
+        <div className='d-flex justify-content-between '>
             <Image
                 src={ProfileImg}
                 alt="Profile picture"
@@ -91,13 +92,18 @@ function AboutMe(){
 }
 function About ()
 {
+
+    
     return(
-        <div className='container rounded  shadow-lg p-4 my-5'>
+        <div  className=' container rounded  shadow-lg p-4 my-5 '>
             <div className='row'>
-                <div className='col-6'>
-                    <AboutContacts/>
-                    <AboutSkills/>
+                <div className='col-md-6'>
+                    <div className='d-flex flex-column'>
+                        <AboutContacts />
+                        <AboutSkills />
+                    </div>
                 </div>
+
                 <div className='col-6'>
                     <AboutMe/>
                 </div>
