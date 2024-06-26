@@ -13,7 +13,7 @@ export default function MainPage() {
       {/* <header>
           <GeneralScrollSpy/>
       </header> */}
-      <main className="container-fluid p-0">
+      <main className="container-fluid p-0 bg-white">
         {/* <Home /> */}
         <About/>
       </main>

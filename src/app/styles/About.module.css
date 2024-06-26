@@ -1,13 +1,30 @@
+
+.f_famil_raleway{
+    font-family: 'Raleway', sans-serif;
+}
+
+.f_famil_roboto{
+    font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.fw_12{
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+}
+
 .fw_16{
-    font-weight: 16px;
+    font-size: 16px;
 }
 
 .fw_18{
-    font-weight: 18px;
+    font-size: 18px;
+}
+.fw_28{
+    font-size: 28px;
 }
 
-.ml_30px{
-    margin-left: 27px;
+.ml_24px{
+    margin-left: 24px;
 }
 
 .h_10px{
