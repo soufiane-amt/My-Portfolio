@@ -51,7 +51,7 @@ function AboutSkills (){
 
 function ProfileInfo() {
     return (
-        <div className={`profile-info ${style.text_light_black}  ${style.f_famil_roboto}`}>
+        <div className={`profile-info ${style.text_light_black}  ${style.f_famil_roboto}  `}>
             <p><span className={` fw-bold ${style.fw_16_px}`}>Name:</span> {profileInfo.name}</p>
             <p><span className={`fw-bold ${style.fw_16_px}`}>Profile:</span> {profileInfo.profile}</p>
             <p><span className={`fw-bold ${style.fw_16_px}`}>Email:</span> {profileInfo.email}</p>
@@ -65,13 +65,12 @@ function AboutContacts ()
 {
 
     return (
-        <div className={`d-flex justify-content-between ${style.about_contacts}`}>
+        <div className={`d-flex ${style.about_contacts}`}>
             <Image
                 src={ProfileImg}
                 alt="Profile picture"
                 height={170}
                 width={170}
-                
             />
             <ProfileInfo />
         </div>
