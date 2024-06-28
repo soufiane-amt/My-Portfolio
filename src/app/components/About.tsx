@@ -65,7 +65,7 @@ function AboutContacts ()
 {
 
     return (
-        <div className='d-flex justify-content-between '>
+        <div className={`d-flex justify-content-between ${style.about_contacts}`}>
             <Image
                 src={ProfileImg}
                 alt="Profile picture"
@@ -80,7 +80,7 @@ function AboutContacts ()
 
 function AboutMe(){
     return (
-        <div className='bg-white' >
+        <div className={`bg-white ${style.about_me}`} >
             <h5 className={`${style.fw_28_px} ${style.f_famil_raleway} fw-bold border-bottom border-primary border-5 mb-4`}>About me</h5>
             <p className={`${style.f_famil_roboto} ${style.fw_18_px} ${style.text_light_black}`}>
                 Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
@@ -100,13 +100,13 @@ function About ()
                 <div className='col-md-6'>
                     <div className='d-flex flex-column'>
                         <AboutContacts />
-                        {/* <AboutSkills /> */}
+                        <AboutSkills />
                     </div>
                 </div>
 
-                {/* <div className='col-6'>
+                <div className='col-md-6'>
                     <AboutMe/>
-                </div> */}
+                </div>
             </div>
         </div>
     )

@@ -1,3 +1,19 @@
+@media (max-width: 990px) {
+    .about_contacts {
+        flex-direction: column;
+    }
+    .about_contacts img {
+        height: 318px;
+        width: 318px;
+        margin-bottom: 30px;
+    }    
+}
+@media (max-width: 767px) {
+    .about_contacts img {
+        height: 480px;
+        width: 480px;
+    }    
+}
 
 .f_famil_raleway{
     font-family: 'Raleway', sans-serif;
