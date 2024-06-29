@@ -20,6 +20,41 @@ const educationInfoArr = [
     },
 ]
 
+const academicProjects = [
+    {
+        projectName :"Ft_transcendance",
+        description : "Web application featuring a real-time multiplayer PingPong game, robusting chat system."    
+    },
+    {
+        projectName :"Webserv",
+        description : "Collaborative project focused on creating a custom HTTP server with efficient handling of\
+        requests and responses, featuring HTTP methods, static website serving, file upload\
+        support, server configuration file implementation, and CGI functionality.\
+        "    
+    },
+    {
+        projectName :"Inception",
+        description : "Solo Docker-based system administration project, establishing a secure virtualized\
+        infrastructure with NGINX, WordPress, and MariaDB containers, emphasizing stringent\
+        security measures, environment variable usage, local Docker image building, network security\
+        configuration."    
+    },
+    {
+        projectName :"Minishell",
+        description : "Collaborative project shell interpreter inspired by Bash, emphasizing command execution."    
+    },
+    {
+        projectName :"ft_containers",
+        description : "Solo project, aims to reimplement several Standard Template Library (STL) containers as\
+        defined by the c++98, includes:\
+        vector, stack, map, set."    
+    },
+]
+
+interface academicProjectsType {
+    projectName :string,
+    description : string
+}
 
 interface EductionUnitsType {
     diplomaName :string,
@@ -27,6 +62,9 @@ interface EductionUnitsType {
     location : string, 
     description : string
 }
+
+
+
 
 
 const EductionUnits: React.FC<{educationInfo: EductionUnitsType }> = ({educationInfo}) => 
@@ -50,8 +88,28 @@ function ResumeEducation ()
         <div className='f_famil_raleway '>
             <h3 className='fw_26_px fw-bold'>Education</h3>
             {educationInfoArr.map(item => (
-                <EductionUnits educationInfo={item}/>
+                <EductionUnits key={item.diplomaName} educationInfo={item}/>
             ))}
+        </div>
+    )
+}
+
+function AcademicResume ()
+{
+    return (
+        <div className='f_famil_raleway mb-4'>
+            <h3 className='fw_26_px fw-bold'>Academic Projects</h3>
+            <div>
+            {academicProjects.map(project => (
+                <div key={project.projectName} className='d-flex align-items-start mb-3'>
+                    <div className={`${style.circle}`}></div>
+                    <div className={`${style.resume_section} ms-3`}>
+                    <h4 className={`fw_18_px ${style.sub_title_styling}`}>{project.projectName}</h4>
+                    <p className={`fw_16_px f_famil_roboto f_style_italic`}>{project.description}</p>
+                    </div>
+                </div>
+            ))}
+            </div>
         </div>
     )
 }
@@ -59,7 +117,7 @@ function ResumeEducation ()
 function ResumeSumary ()
 {
     return (
-        <div className='f_famil_raleway '>
+        <div className='f_famil_raleway mb-4'>
             <h3 className='fw_26_px fw-bold'>Summary</h3>
             <div>
                 <div className={`${style.circle}`}></div>
@@ -76,8 +134,9 @@ function Resume ()
 {
     return (
         <div className='container m-4'>
-            <ResumeSumary/>
-            <ResumeEducation/>
+            {/* <ResumeSumary/>
+            <ResumeEducation/> */}
+            <AcademicResume/>
         </div>
     )
 }
