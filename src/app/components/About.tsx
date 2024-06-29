@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImg from '@public/profile-img.jpg';
 import Image from 'next/image';
 import style from '../styles/About.module.css'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const profileInfo = {
     name : "Soufiane Amajat",
@@ -18,19 +18,49 @@ interface SkillDataType{
     percentage: string,
     color: string
 }
-function SkillBar ({skillData}: {skillData : SkillDataType}){
+const SkillBar: React.FC<{ skillData: SkillDataType }> = ({ skillData }) => {
+    const progressBarRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 1 } // Adjust the threshold as needed
+        );
+
+        if (progressBarRef.current) {
+            observer.observe(progressBarRef.current);
+        }
+
+        return () => {
+            if (progressBarRef.current) {
+                observer.unobserve(progressBarRef.current);
+            }
+        };
+    }, []);
+
     return (
         <div>
             <div className={`d-flex justify-content-between ${style.text_light_black} mt-0 ${style.f_famil_raleway}`}>
                 <label className={`${style.fw_12_px}`}>{skillData.skillName}</label>
                 <span className={`${style.fw_12_px}`}>{skillData.percentage}%</span>
             </div>
-            <div className={`progress mb-3 ${style.h_10px} rounded-0`}>
-                <div className={`progress-bar bg-${skillData.color}`} style={{width:`${skillData.percentage}%`}}></div>
+            <div className={`progress mb-3 ${style.h_10px} rounded-0`} ref={progressBarRef}>
+                <div
+                    className={`progress-bar progress-bar-animated bg-${skillData.color}`}
+                    style={{ width: isVisible ? `${skillData.percentage}%` : '0%' }}
+                ></div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 function AboutSkills (){
 
