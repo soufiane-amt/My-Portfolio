@@ -136,7 +136,7 @@ function Resume ()
 {
     return (
         <div className='container '>
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex flex-column flex-md-row'>
                 <div className='me-5'>
                     <ResumeSumary/>
                     <ResumeEducation/>
