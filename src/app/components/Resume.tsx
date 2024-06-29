@@ -72,7 +72,7 @@ const EductionUnits: React.FC<{educationInfo: EductionUnitsType }> = ({education
     return (
             <div className='f_famil_raleway '>
                 <div className={`${style.circle}`}></div>
-                <div className={`${style.resume_section}`}>
+                <div className={`${style.resume_section} ms-3`}>
                     <h4 className={`fw_18_px ${style.sub_title_styling}`}>{educationInfo.diplomaName}</h4>
                     <p className='ps-3 fw-bold'>{educationInfo.duration}</p>
                     <p className={`fw_16_px f_famil_roboto f_style_italic `}>{educationInfo.location}</p>
@@ -104,8 +104,8 @@ function AcademicResume ()
                 <div key={project.projectName} className='d-flex align-items-start mb-3'>
                     <div className={`${style.circle}`}></div>
                     <div className={`${style.resume_section} ms-3`}>
-                    <h4 className={`fw_18_px ${style.sub_title_styling}`}>{project.projectName}</h4>
-                    <p className={`fw_16_px f_famil_roboto f_style_italic`}>{project.description}</p>
+                        <h4 className={`fw_18_px ${style.sub_title_styling}`}>{project.projectName}</h4>
+                        <p className={`fw_16_px f_famil_roboto f_style_italic`}>{project.description}</p>
                     </div>
                 </div>
             ))}
@@ -120,10 +120,12 @@ function ResumeSumary ()
         <div className='f_famil_raleway mb-4'>
             <h3 className='fw_26_px fw-bold'>Summary</h3>
             <div>
-                <div className={`${style.circle}`}></div>
-                <div className={`${style.resume_section}`}>
-                    <h4 className={`fw_18_px ${style.sub_title_styling}`}>BRANDON JOHNSON</h4>
-                    <p className={`fw_16_px f_famil_roboto f_style_italic `}>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</p>
+                <div className='d-flex align-items-start mb-3'>
+                    <div className={`${style.circle}`}></div>
+                    <div className={`${style.resume_section} ms-3`}>
+                        <h4 className={`fw_18_px ${style.sub_title_styling}`}>BRANDON JOHNSON</h4>
+                        <p className={`fw_16_px f_famil_roboto f_style_italic `}>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,10 +135,16 @@ function ResumeSumary ()
 function Resume ()
 {
     return (
-        <div className='container m-4'>
-            {/* <ResumeSumary/>
-            <ResumeEducation/> */}
-            <AcademicResume/>
+        <div className='container '>
+            <div className='d-flex justify-content-between'>
+                <div className='me-5'>
+                    <ResumeSumary/>
+                    <ResumeEducation/>
+                </div>
+                <div>
+                    <AcademicResume/>
+                </div>
+            </div>
         </div>
     )
 }
