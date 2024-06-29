@@ -5,6 +5,7 @@ import './globals.css';
 import GeneralScrollSpy from "./components/GeneralScrollSpy";
 import Home from "./components/Home";
 import About from "./components/About";
+import Resume from "./components/Resume";
 
 
 export default function MainPage() {
@@ -15,7 +16,8 @@ export default function MainPage() {
       </header> */}
       <main className="container-fluid p-0 bg-white">
         {/* <Home /> */}
-        <About/>
+        {/* <About/> */}
+        <Resume/>
       </main>
     </div>
   );

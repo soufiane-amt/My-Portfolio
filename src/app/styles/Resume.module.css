@@ -1,0 +1,33 @@
+.fw_26_px{
+    font-size: 26px;
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.circle::before{
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--resume-shapes);
+    left: -29px;
+    top: 22px;
+}
+
+.resume_section {
+    position: relative;
+}
+
+.resume_section::after{
+    position: absolute;
+    content: "";
+    border: 1px solid var(--resume-shapes);
+    height: calc(100% - 10px);
+    left: -22px;
+    top: 18px;
+}
