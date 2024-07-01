@@ -15,8 +15,8 @@ export default function MainPage() {
           <GeneralScrollSpy/>
       </header> */}
       <main className="container-fluid p-0 bg-white">
-        {/* <Home /> */}
-        {/* <About/> */}
+        {/* <Home />
+        <About/> */}
         <Resume/>
       </main>
     </div>
