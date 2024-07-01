@@ -4,21 +4,39 @@ import style from '../styles/Resume.module.css'
 import React from 'react';
 
 
+const ResumeSummary = {
+    name : "Amajat Soufiane",
+    summary : "Motivated software developer with a solid background in computer science and initial\
+    experience in software design and development. Skilled in programming with\
+    multiple languages, debugging, and performance optimization. Able to quickly adapt\
+    to new technologies and work effectively in a team."
+}
 
 const educationInfoArr = [
     {
-        diplomaName :"MASTER OF FINE ARTS & GRAPHIC DESIGN",
-        duration: "2015 - 2016" ,
-        location : "Rochester Institute of Technology, Rochester, NY" ,
-        description : "Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend",
+        diplomaName :"High School Diploma",
+        duration: "2018 - 2019" ,
+        location : "Moulay Idriss II high school" ,
+        description : "Graduated with honors in economic studies",
     },
     {
-        diplomaName :"BACHELOR OF FINE ARTS & GRAPHIC DESIGN",
+        diplomaName :"",
+        duration: "2019 - 2021" ,
+        location : "Hassan II university" ,
+        description : "Studied for 2 years at Hassan 2 economics faculty",
+    },
+    {
+        diplomaName :"42 network Common Core Certificate",
         duration: "2010 - 2014" ,
-        location : "Rochester Institute of Technology, Rochester, NY" ,
-        description : "Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila",
+        location : "1337 IT School" ,
+        description : "Completed a two-year Common Core\
+        program with a focus on peer-to-peer\
+        learning and hands-on networking,\
+        Linux, system administration and\
+        coding projects.",
     },
 ]
+
 
 const academicProjects = [
     {
@@ -73,9 +91,9 @@ const EductionUnits: React.FC<{educationInfo: EductionUnitsType }> = ({education
             <div className='f_famil_raleway '>
                 <div className={`${style.circle}`}></div>
                 <div className={`${style.resume_section} ms-3`}>
-                    <h4 className={`fw_18_px ${style.sub_title_styling}`}>{educationInfo.diplomaName}</h4>
+                    <h4 className={`fw_18_px ${style.sub_title_styling}`}>{educationInfo.location}</h4>
                     <p className='ps-3 fw-bold'>{educationInfo.duration}</p>
-                    <p className={`fw_16_px f_famil_roboto f_style_italic `}>{educationInfo.location}</p>
+                    <p className={`fw_16_px f_famil_roboto f_style_italic `}>{educationInfo.diplomaName}</p>
                     <p className={`fw_16_px f_famil_roboto  `}>{educationInfo.description}</p>
                 </div>
             </div>
@@ -124,8 +142,8 @@ function ResumeSumary ()
                 <div className='d-flex align-items-start mb-3'>
                     <div className={`${style.circle}`}></div>
                     <div className={`${style.resume_section} ms-3`}>
-                        <h4 className={`fw_18_px ${style.sub_title_styling}`}>BRANDON JOHNSON</h4>
-                        <p className={`fw_16_px f_famil_roboto f_style_italic `}>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</p>
+                        <h4 className={`fw_18_px ${style.sub_title_styling}`}>{ResumeSummary.name}</h4>
+                        <p className={`fw_16_px f_famil_roboto f_style_italic `}>{ResumeSummary.summary}</p>
                     </div>
                 </div>
             </div>
