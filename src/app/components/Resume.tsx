@@ -153,35 +153,10 @@ function ResumeSumary ()
 
 function Resume ()
 {
-    const h2Ref = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(style.open);
-                } else {
-                    entry.target.classList.remove(style.open);
-                }
-            });
-        }, { threshold: 0.5 }); // Trigger when at least 50% of the element is in the viewport
-
-        if (h2Ref.current) {
-            observer.observe(h2Ref.current);
-        }
-
-        // Cleanup
-        return () => {
-            if (h2Ref.current) {
-                observer.unobserve(h2Ref.current);
-            }
-        };
-    }, []); // Empty dependency array to run once on component mount
-
     return (
-        <div className={`container ${style.resume}`}>
+        <div className={`container ${style.resume} `}>
             <div className='d-flex justify-content-center mb-5'>
-                <h2 ref={h2Ref} className='f_famil_raleway text-center'>Resume</h2>
+                <h2 className={`f_famil_raleway text-center section_title`}>Resume</h2>
             </div>
             <div className='d-flex flex-column flex-md-row'>
                 <div className={`${style.me_setting}`}>

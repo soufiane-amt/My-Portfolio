@@ -79,3 +79,25 @@ main {
 .fw_26_px{
   font-size: 26px;
 }
+
+
+
+.section_title{
+  display: inline-block; 
+  font-weight: bold;
+  position: relative;
+  font-size: 32px;
+  padding-bottom: 15px;
+  text-align:center;
+
+}
+
+.section_title::after{
+  content: "";
+  position: absolute;
+  border-bottom: solid var(--resume-shapes) 3px;
+  width: 50%;
+  top: 100%;
+  left: 25%;
+
+}
