@@ -85,7 +85,7 @@ const EductionUnits: React.FC<{educationInfo: EductionUnitsType }> = ({education
 function ResumeEducation ()
 {
     return (
-        <div className='f_famil_raleway '>
+        <div className='f_famil_raleway mb-4'>
             <h3 className='fw_26_px fw-bold'>Education</h3>
             {educationInfoArr.map(item => (
                 <EductionUnits key={item.diplomaName} educationInfo={item}/>
@@ -116,6 +116,7 @@ function AcademicResume ()
 
 function ResumeSumary ()
 {
+    // mb-4   
     return (
         <div className='f_famil_raleway mb-4'>
             <h3 className='fw_26_px fw-bold'>Summary</h3>
@@ -137,7 +138,7 @@ function Resume ()
     return (
         <div className='container '>
             <div className='d-flex flex-column flex-md-row'>
-                <div className='me-5'>
+                <div className={`${style.me_setting}`}>
                     <ResumeSumary/>
                     <ResumeEducation/>
                 </div>

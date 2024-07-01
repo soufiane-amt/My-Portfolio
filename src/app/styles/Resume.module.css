@@ -29,3 +29,13 @@
     left: -22px;
     top: 18px;
 }
+
+.me_setting {
+    margin-right: 35px;
+}
+
+@media (max-width: 767px) {
+    .me_setting {
+        margin-right: 0px;
+    }
+}
