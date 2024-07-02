@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Portfolio.module.css';
 import Image from 'next/image';
 import MainBackImg from '@public/myPic.jpg';
+import { useState } from 'react';
 
 const projectList = [
     {
@@ -46,7 +47,7 @@ interface ProjectCardType {
 }
 const ProjectCard: React.FC<{ project: ProjectCardType }> = ({ project }) => {
     return (
-        <div className={`${style.project_card} col-md-4`}>
+        <div className={`${style.project_card} col-md-4 position-relative`}>
             <div>
                 <img 
                     src={`${project.imgSrc}`} 
@@ -54,35 +55,42 @@ const ProjectCard: React.FC<{ project: ProjectCardType }> = ({ project }) => {
                     className='img-fluid'
                     />
             </div>
-            {/* <div>
-                <h4>{`${project.name}`} </h4>
-                <p>{`${project.decription}`} </p>
-            </div> */}
+            <div className={` position-absolute ${style.card_description} d-flex flex-column `}>
+                <h4 className='f_famil_raleway fw_18_px fw-bold'>{`${project.name}`} </h4>
+                <p className='f_famil_roboto fw_14_px'>{`${project.decription}`} </p>
+            </div>
         </div>
     )
 }
 
 function ProjectsNavBarList ()
 {
+    const [currentList, setCurrentList] = useState<string>("all")
+
+    const handleButtonClick = (e:any)=>{
+        const hrefValue = e.target.getAttribute('href').substring(1);
+        setCurrentList(hrefValue);
+}
+
     return (
         <div className='d-flex flex-column justify-content-center mt-3'>
-            <nav className="navbar navbar-expand-lg fw-bold  d-flex justify-content-center">
+            <nav className="navbar navbar-expand fw-bold  d-flex justify-content-center">
                 <div className=''>
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">ALL</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "all" ? "text-primary" : ""}`} href="#all">ALL</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">APP</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "app" ? "text-primary" : ""}`} href="#app">APP</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">PRODUCT</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "product" ? "text-primary" : ""}`} href="#product">PRODUCT</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="#">BRANDING</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList  == "branding" ? "text-primary" : ""}`} href="#branding">BRANDING</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="#">BOOKS</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList  =="books" ? "text-primary" : ""}`} href="#books">BOOKS</a>
                         </li>
                     </ul>
                 </div>

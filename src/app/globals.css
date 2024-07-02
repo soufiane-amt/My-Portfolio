@@ -54,6 +54,9 @@ main {
 }
 
 /* different font sizes */
+.fw_14_px{
+  font-size: 14px;
+}
 .fw_18_px{
   font-size: 18px;
 }

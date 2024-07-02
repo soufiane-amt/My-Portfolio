@@ -59,7 +59,6 @@ export default function GeneralScrollSpy() {
 
     const handleButtonClick = (e:any)=>{
             const hrefValue = e.target.getAttribute('href').substring(1);
-            console.log (hrefValue)
             setCurrentPage(hrefValue);
     }
 

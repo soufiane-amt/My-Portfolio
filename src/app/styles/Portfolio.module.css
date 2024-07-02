@@ -1,9 +1,32 @@
 .project_card {
-    width: 300px;
-    height: 242px;
-    /* margin: 10px; */
+    cursor: pointer;
+    width: 311px;
+    height: 257px;
+    margin-left: auto;
+    overflow: hidden;
   }
+
 .project_card img {
     height: 100%;
     width: 100%;
+}
+
+
+.card_description{
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 75%;
+    top: 42%;
+    left: 13%;
+    padding-inline: 18px;
+    padding-block: 5px; 
+    top: -100%; /* Hide the description by moving it down */
+    transition: top 0.3s ease-in-out; /* Transition effect */
+}
+
+.project_card:hover .card_description{
+    top: 42%;
+}
+
+.card_description p {
+    color: rgb(30.59% 30.59% 30.59% / 0.7);
 }
