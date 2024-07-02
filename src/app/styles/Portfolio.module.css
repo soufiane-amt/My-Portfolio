@@ -1,0 +1,9 @@
+.project_card {
+    width: 300px;
+    height: 242px;
+    /* margin: 10px; */
+  }
+.project_card img {
+    height: 100%;
+    width: 100%;
+}

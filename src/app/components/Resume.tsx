@@ -69,10 +69,6 @@ const academicProjects = [
     },
 ]
 
-interface academicProjectsType {
-    projectName :string,
-    description : string
-}
 
 interface EductionUnitsType {
     diplomaName :string,

@@ -6,6 +6,7 @@ import GeneralScrollSpy from "./components/GeneralScrollSpy";
 import Home from "./components/Home";
 import About from "./components/About";
 import Resume from "./components/Resume";
+import Portfolio from "./components/Portfolio";
 
 
 export default function MainPage() {
@@ -17,7 +18,8 @@ export default function MainPage() {
       <main className="container-fluid p-0 bg-white">
         {/* <Home />
         <About/> */}
-        <Resume/>
+        {/* <Resume/> */}
+        <Portfolio/>
       </main>
     </div>
   );
