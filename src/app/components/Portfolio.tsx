@@ -4,35 +4,42 @@ import style from '../styles/Portfolio.module.css';
 import Image from 'next/image';
 import MainBackImg from '@public/myPic.jpg';
 import { useState } from 'react';
+import { Love_Light } from 'next/font/google';
 
 const projectList = [
     {
         name : "ft_transcendance",
+        type : "Web",
         decription : "Online multiplayers Ping Pong game",
         imgSrc : "/ProjectElement/app-1.jpg"
     },
     {
         name : "Webserv",
+        type : "Systems Programming",
         decription : "Nginix inspired web server project",
         imgSrc : "/ProjectElement/product-1.jpg"
     },
     {
         name : "Inception",
+        type : "Containerization",
         decription : "Containerization project",
         imgSrc : "/ProjectElement/branding-1.jpg"
     },
     {
         name : "Minishell",
+        type : "Systems Programming",
         decription : "Reimplimentation of a shell interpreter",
         imgSrc : "/ProjectElement/books-1.jpg"
     },
     {
         name : "ft_containers",
+        type : "Systems Programming",
         decription : "C++ Data structures low level programing ",
         imgSrc : "/ProjectElement/app-2.jpg"
     },
     {
         name : "Cub3D",
+        type : "Graphics",
         decription : "Raycasting game project",
         imgSrc : "/ProjectElement/product-2.jpg"
     },
@@ -65,7 +72,7 @@ const ProjectCard: React.FC<{ project: ProjectCardType }> = ({ project }) => {
 
 function ProjectsNavBarList ()
 {
-    const [currentList, setCurrentList] = useState<string>("all")
+    const [currentList, setCurrentList] = useState<string>("All")
 
     const handleButtonClick = (e:any)=>{
         const hrefValue = e.target.getAttribute('href').substring(1);
@@ -78,19 +85,22 @@ function ProjectsNavBarList ()
                 <div className=''>
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "all" ? "text-primary" : ""}`} href="#all">ALL</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "All" ? "text-primary" : ""}`} href="#All">All</a>
+                        </li>
+                        <li className="nav-item active">
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "Web" ? "text-primary" : ""}`} href="#Web">Web</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "app" ? "text-primary" : ""}`} href="#app">APP</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "Systems Programming" ? "text-primary" : ""}`} href="#Systems Programming">Systems Programming</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "product" ? "text-primary" : ""}`} href="#product">PRODUCT</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "Algorithms" ? "text-primary" : ""}`} href="#Algorithms">Algorithms</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList  == "branding" ? "text-primary" : ""}`} href="#branding">BRANDING</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList  == "Graphics" ? "text-primary" : ""}`} href="#Graphics">Graphics</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList  =="books" ? "text-primary" : ""}`} href="#books">BOOKS</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${currentList  =="Others" ? "text-primary" : ""}`} href="#Others">Others</a>
                         </li>
                     </ul>
                 </div>
@@ -98,9 +108,14 @@ function ProjectsNavBarList ()
                 <div className={`row d-flex justify-content-center`} >
                     {
                         projectList.map ((item)=>
+                        {
+                            if (currentList === "All")
+                                return <ProjectCard key={item.name} project={item}/>;
+                            else if (item.type === currentList)
+                                return <ProjectCard key={item.name} project={item}/>;
                             
-                            <ProjectCard key={item.name} project={item}/>
-                        )
+                        })
+                            
                     }
                 </div>
         </div>
@@ -111,7 +126,7 @@ function ProjectsNavBarList ()
 function Portfolio ()
 {
     return (
-        <div className={`container m-auto `}>
+        <div className={`container `}>
             <div className={`d-flex justify-content-center mb-3`}>
                 <h2 className={`f_famil_raleway text-center section_title`}>Portfolio</h2>
             </div>
