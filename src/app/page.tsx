@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
 
 
 export default function MainPage() {
@@ -19,7 +20,8 @@ export default function MainPage() {
         {/* <Home />
         <About/>
         <Resume/> */}
-        <Portfolio/>
+        {/* <Portfolio/> */}
+        <Contact/>
       </main>
     </div>
   );

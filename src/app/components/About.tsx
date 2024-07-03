@@ -119,9 +119,9 @@ function AboutMe(){
         </div>
     )
 }
+
 function About ()
 {
-
     
     return(
         <div  className=' container rounded  shadow-lg p-4 my-5 '>

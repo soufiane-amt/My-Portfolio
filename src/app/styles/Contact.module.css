@@ -1,0 +1,30 @@
+.phone_icon {
+    margin-right: 12px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #0078ff;
+    color: #0078ff; /* Default color of the icon */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .phone_icon i{
+    font-size:larger;
+  }
+/* 
+  .contact p {
+    color: rgb(78, 78, 78);
+  } */
+  
+
+  .phone_icon:hover {
+    color: white; /* Icon color on hover */
+    background-color: #0078ff; /* Background color on hover */
+    padding: 2x; 
+  }
+  
+  .contacts_board{
+    box-shadow: 0px 1px 11px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    /* margin-block: 20px; */
+}
