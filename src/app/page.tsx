@@ -17,8 +17,8 @@ export default function MainPage() {
       </header> */}
       <main className="container-fluid p-0 bg-white">
         {/* <Home />
-        <About/> */}
-        {/* <Resume/> */}
+        <About/>
+        <Resume/> */}
         <Portfolio/>
       </main>
     </div>
