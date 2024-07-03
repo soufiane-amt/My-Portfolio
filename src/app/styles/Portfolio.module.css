@@ -1,9 +1,9 @@
 .project_card {
-    cursor: pointer;
-    width: 351px;
-    height: 297px;
+    /* cursor: pointer; */
+    /* width: 331px;
+    height: 277px; */
     overflow: hidden;
-    
+    margin-bottom: 30px;
   }
 
 .project_card img {
@@ -11,9 +11,6 @@
     width: 100%;
 }
 
-.project_card_list {
-    align-self: center;
-}
 
 .card_description{
     background-color: rgba(255, 255, 255, 0.9);
@@ -24,11 +21,12 @@
     padding-inline: 18px;
     padding-top: 12px; 
     top: -100%; /* Hide the description by moving it down */
-    transition: top 0.3s ease-in-out; /* Transition effect */
+    transition: top 0.3s ease-in-out; 
 }
 
 .project_card:hover .card_description{
-    top: 42%;
+    top: 55%;
+    /* bottom: 5%; */
 }
 
 .card_description p {

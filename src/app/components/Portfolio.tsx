@@ -47,7 +47,7 @@ interface ProjectCardType {
 }
 const ProjectCard: React.FC<{ project: ProjectCardType }> = ({ project }) => {
     return (
-        <div className={`${style.project_card} col-lg-4 col-md-6 position-relative`}>
+        <div className={`${style.project_card} col-lg-4 col-md-6  position-relative`}>
             <div>
                 <img 
                     src={`${project.imgSrc}`} 
@@ -95,7 +95,6 @@ function ProjectsNavBarList ()
                     </ul>
                 </div>
             </nav>
-            <div className={` ${style.project_card_list}`}>
                 <div className={`row d-flex justify-content-center`} >
                     {
                         projectList.map ((item)=>
@@ -104,7 +103,6 @@ function ProjectsNavBarList ()
                         )
                     }
                 </div>
-            </div>
         </div>
     )
 }
