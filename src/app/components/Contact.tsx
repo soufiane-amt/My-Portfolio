@@ -96,6 +96,12 @@ function Messager ()
                 <input type='text' placeholder='Subject' className='form-control border rounded-0' required>
                 </input>
             </div>
+            <div className='d-flex justify-content-center my-3 mx-3'>
+                <textarea placeholder='Message' className='form-control border rounded-0' required></textarea>
+            </div>
+            <div className='d-flex justify-content-center'>
+                <button>Send Message</button>
+            </div>
         </div>
     )
 }

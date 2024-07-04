@@ -47,7 +47,16 @@
 
   }
 
-  .messager input::placeholder {
+  .messager input::placeholder,  .messager textarea::placeholder {
     color: rgb(0, 0, 0, 0.3);
     font-size: small;
+  }
+
+  .messager button{
+    background-color: #0078ff;
+    color: white;
+    border: 0;
+    padding-inline: 27px;
+    padding-block: 8px;
+    border-radius: 21px;
   }
