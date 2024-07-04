@@ -4,7 +4,7 @@ import profilePic from '@public/NavBar/logo.png';
 import Image from 'next/image';
 import  style from '../styles/Home.module.css';
 import MainBackImg from '@public/myPic.jpg';
-import { useEffect, useState } from 'react';
+import { LegacyRef, useEffect, useState } from 'react';
 import internal from 'stream';
 
 
@@ -60,10 +60,13 @@ function Introduction()
     )
 }
 
-export default function Home() {
+interface homeProps {
+    reference : LegacyRef<HTMLDivElement> | undefined;
+}
+const Home: React.FC<homeProps> = ({ reference }) => {
 
     return (
-        <div className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>
+        <div ref={reference} className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>
             <Image
                 src={MainBackImg}
                 alt="My picture"
@@ -73,3 +76,5 @@ export default function Home() {
         </div>
     );
 }
+
+export default Home;

@@ -62,26 +62,10 @@ function GithubContactItem ()
     )
 }
 
-function Contact ()
-{
-    return (
-        <div className={`container `}>
-            <div className={`d-flex justify-content-center mb-3`}>
-                <h2 className={`f_famil_raleway text-center section_title`}>Contact</h2>
-            </div>
-        <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
-                <EmailContactItem/>
-                <LinkedInContactItem/>
-                <GithubContactItem/>
-            </div>
-        </div>
-    )
-}
-
 function Messager ()
 {
     return (
-        <div className={`container ${style.messager} d-flex flex-column justify-content-center py-3`}>
+        <div className={`container ${style.messager} d-flex flex-column justify-content-center py-3 mt-5`}>
             <div className='d-md-flex justify-content-md-between '>
                 <div  className='d-flex justify-content-center my-3 mx-3 flex-fill'>
                     <input type='text' placeholder='Full Name' className='form-control border rounded-0' required>
@@ -105,5 +89,25 @@ function Messager ()
         </div>
     )
 }
-// export default Contact;
-export default Messager;
+
+
+function Contact ()
+{
+    return (
+
+        <div className={`container mt-5`}>
+            <div className={`d-flex justify-content-center mb-3`}>
+                <h2 className={`f_famil_raleway text-center section_title`}>Contact</h2>
+            </div>
+            <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
+                    <EmailContactItem/>
+                    <LinkedInContactItem/>
+                    <GithubContactItem/>
+                </div>
+            <Messager/>
+        </div>
+    )
+}
+
+
+export default Contact;

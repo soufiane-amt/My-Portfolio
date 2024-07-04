@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '@public/NavBar/logo.png';
 import Image from 'next/image';
 import style from '../styles/GeneralScrollSpy.module.css';
-import { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 type ClickHandler = () => void;
 
@@ -22,12 +22,20 @@ function CloseButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
     );
 }
 
-export default function GeneralScrollSpy() {
+interface GeneralScrollSpyProps {
+    homeRef: RefObject<HTMLInputElement>;
+    aboutRef: RefObject<HTMLInputElement>;
+    resumeRef: RefObject<HTMLInputElement>;
+  }
+  const GeneralScrollSpy: React.FC<GeneralScrollSpyProps> = ({homeRef,aboutRef,resumeRef}) => {
     const [currentPage, setCurrentPage] = useState<string>("");
     const [expanded, setExpanded] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
 
-
+    const handleButtonAnchorClick = (sectionRef: any) => {
+        sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+      };
+    
     useEffect(()=>{
         const handleScroll = ()=>{
             if (window.scrollY > 50)
@@ -72,13 +80,13 @@ export default function GeneralScrollSpy() {
                 <div className={`collapse navbar-collapse position-relative  ${expanded ? `show ${style.top_vh_10}` : ''} `} id="navbarNav">
                     <ul className={`${style.fw_14_px} navbar-nav  d-flex justify-content-end w-100  ${expanded ? `bg-white  ${style.bd_radius_6_px} ps-3 py-2 ` : ''} `}>
                         <li className={`nav-item px-3    ${style.f_famil_poppins}`}>
-                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "home" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "home" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "services" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Services</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "services" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Services</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
                                 <a onClick={handleButtonClick} className={`nav-link ${currentPage == "portfolio" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
@@ -93,3 +101,6 @@ export default function GeneralScrollSpy() {
         </nav>
     );
 }
+
+
+export default GeneralScrollSpy;
