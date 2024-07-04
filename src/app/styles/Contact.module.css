@@ -40,3 +40,17 @@
     border-radius: 3px;
     word-break: break-word;
   }
+
+  .messager{
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+
+  }
+
+  .messager input::placeholder {
+    color: rgb(0, 0, 0, 0.3);
+    font-size: small;
+  }
+  .test{
+    display: inline-block;
+  }

@@ -78,4 +78,26 @@ function Contact ()
     )
 }
 
-export default Contact;
+function Messager ()
+{
+    return (
+        <div className={`container ${style.messager} d-flex flex-column justify-content-center py-3`}>
+            {/* <div className=''> */}
+                <div  className='d-flex justify-content-center my-3 mx-3'>
+                    <input type='text' placeholder='Full Name' className='form-control border rounded-0' required>
+                    </input>
+                </div>
+                <div className='d-flex justify-content-center my-3 mx-3'>
+                    <input type='email' placeholder='Your Email' className='form-control border rounded-0' required>
+                    </input>
+                </div>
+            {/* </div> */}
+            <div className='d-flex justify-content-center my-3 mx-3'>
+                <input type='text' placeholder='Subject' className='form-control border rounded-0' required>
+                </input>
+            </div>
+        </div>
+    )
+}
+// export default Contact;
+export default Messager;

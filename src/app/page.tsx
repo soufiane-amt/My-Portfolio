@@ -8,6 +8,7 @@ import About from "./components/About";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import Messager from "./components/Contact";
 
 
 export default function MainPage() {
@@ -21,7 +22,8 @@ export default function MainPage() {
         <About/>
         <Resume/> */}
         {/* <Portfolio/> */}
-        <Contact/>
+        {/* <Contact/> */}
+        <Messager/>
       </main>
     </div>
   );
