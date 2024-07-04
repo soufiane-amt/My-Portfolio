@@ -82,16 +82,16 @@ function Messager ()
 {
     return (
         <div className={`container ${style.messager} d-flex flex-column justify-content-center py-3`}>
-            {/* <div className=''> */}
-                <div  className='d-flex justify-content-center my-3 mx-3'>
+            <div className='d-md-flex justify-content-md-between '>
+                <div  className='d-flex justify-content-center my-3 mx-3 flex-fill'>
                     <input type='text' placeholder='Full Name' className='form-control border rounded-0' required>
                     </input>
                 </div>
-                <div className='d-flex justify-content-center my-3 mx-3'>
+                <div className='d-flex justify-content-center my-3 mx-3 flex-fill'>
                     <input type='email' placeholder='Your Email' className='form-control border rounded-0' required>
                     </input>
                 </div>
-            {/* </div> */}
+            </div>
             <div className='d-flex justify-content-center my-3 mx-3'>
                 <input type='text' placeholder='Subject' className='form-control border rounded-0' required>
                 </input>
