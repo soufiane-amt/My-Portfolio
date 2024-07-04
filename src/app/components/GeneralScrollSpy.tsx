@@ -83,10 +83,10 @@ interface GeneralScrollSpyProps {
                                 <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "home" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(aboutRef)}} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "services" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Services</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(resumeRef)}} className={`nav-link ${currentPage == "services" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Resume</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
                                 <a onClick={handleButtonClick} className={`nav-link ${currentPage == "portfolio" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>

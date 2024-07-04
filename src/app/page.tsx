@@ -15,20 +15,20 @@ import { useRef } from "react";
 export default function MainPage() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
-  const contactRef = useRef(null);
+  const resumeRef = useRef(null);
 
 
   return (
     <div >
       <header>
-          <GeneralScrollSpy homeRef={homeRef} aboutRef={homeRef} resumeRef={homeRef} />
+          <GeneralScrollSpy homeRef={homeRef} aboutRef={aboutRef} resumeRef={resumeRef} />
       </header>
       <main className="container-fluid p-0 bg-white">
         <Home  reference={homeRef}/>
-        <About/>
-        <Resume/>
-        <Portfolio/>
-        <Contact/>
+        <About reference={aboutRef}/>
+        <Resume reference={resumeRef}/>
+        <Portfolio reference={resumeRef}/>
+        <Contact reference={resumeRef}/>
       </main>
     </div>
   );

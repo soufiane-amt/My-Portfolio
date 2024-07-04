@@ -1,7 +1,7 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Resume.module.css'
-import React, { useEffect, useRef } from 'react';
+import React, { LegacyRef, useEffect, useRef } from 'react';
 
 
 const ResumeSummary = {
@@ -147,10 +147,14 @@ function ResumeSumary ()
     )
 }
 
-function Resume ()
-{
+
+interface resumeProps {
+    reference : LegacyRef<HTMLDivElement> | undefined;
+}
+const Resume: React.FC<resumeProps> = ({ reference }) => {
+
     return (
-        <div className={`container ${style.resume} `}>
+        <div ref={reference} className={`container ${style.resume} `}>
             <div className='d-flex justify-content-center mb-5'>
                 <h2 className={`f_famil_raleway text-center section_title`}>Resume</h2>
             </div>

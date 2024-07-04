@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Portfolio.module.css';
 import Image from 'next/image';
 import MainBackImg from '@public/myPic.jpg';
-import { useState } from 'react';
+import { LegacyRef, useState } from 'react';
 import { Love_Light } from 'next/font/google';
 
 const projectList = [
@@ -122,11 +122,13 @@ function ProjectsNavBarList ()
     )
 }
 
+interface portfolioProps {
+    reference : LegacyRef<HTMLDivElement> | undefined;
+}
+const Portfolio: React.FC<portfolioProps> = ({ reference }) => {
 
-function Portfolio ()
-{
     return (
-        <div className={`container `}>
+        <div ref={reference} className={`container `}>
             <div className={`d-flex justify-content-center mb-3`}>
                 <h2 className={`f_famil_raleway text-center section_title`}>Portfolio</h2>
             </div>

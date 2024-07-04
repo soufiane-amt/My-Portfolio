@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Contact.module.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
+import { LegacyRef } from 'react';
 
 
 
@@ -90,12 +91,12 @@ function Messager ()
     )
 }
 
-
-function Contact ()
-{
+interface contactProps {
+    reference : LegacyRef<HTMLDivElement> | undefined;
+}
+const Contact: React.FC<contactProps> = ({ reference }) => {
     return (
-
-        <div className={`container mt-5`}>
+        <div ref={reference} className={`container mt-5`}>
             <div className={`d-flex justify-content-center mb-3`}>
                 <h2 className={`f_famil_raleway text-center section_title`}>Contact</h2>
             </div>

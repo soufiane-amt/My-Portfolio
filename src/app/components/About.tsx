@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImg from '@public/profile-img.jpg';
 import Image from 'next/image';
 import style from '../styles/About.module.css'
-import { useEffect, useRef, useState } from 'react';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 
 const profileInfo = {
     name : "Soufiane Amajat",
@@ -120,11 +120,14 @@ function AboutMe(){
     )
 }
 
-function About ()
-{
+
+interface aboutProps {
+    reference : LegacyRef<HTMLDivElement> | undefined;
+}
+const About: React.FC<aboutProps> = ({ reference }) => {
     
     return(
-        <div  className=' container rounded  shadow-lg p-4 my-5 '>
+        <div ref={reference} className=' container rounded  shadow-lg p-4 my-5 '>
             <div className='row'>
                 <div className='col-md-6'>
                     <div className='d-flex flex-column'>
