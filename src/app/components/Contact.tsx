@@ -21,11 +21,11 @@ function PhoneContactItem ()
 function EmailContactItem ()
 {
     return (
-        <div className='d-flex '>
+        <div className='d-flex mb-4  my-md-0 pe-2'>
             <div className={`${style.phone_icon} d-flex justify-content-center align-items-center `}>
                 <i className={`bi bi-envelope `}></i>
             </div>
-            <div className='ml-5'>
+            <div className={``}>
                 <h3 className='fw_18_px f_famil_raleway fw-bold'>Email Us</h3>
                 <p className='fw_14_px f_famil_roboto'>amajatsoufiane@gmail.com</p>
             </div>
@@ -36,11 +36,11 @@ function EmailContactItem ()
 function LinkedInContactItem ()
 {
     return (
-        <div className='d-flex'>
+        <div className='d-flex mb-4 my-md-0 pe-2'>
             <div className={`${style.phone_icon} d-flex justify-content-center align-items-center `}>
                 <i className={`bi bi-linkedin `}></i>
             </div>
-            <div className='ml-5'>
+            <div className={``}>
                 <h3 className='fw_18_px f_famil_raleway fw-bold'>Follow Us</h3>
                 <p className='fw_14_px f_famil_roboto'>LinkedIn profile</p>
             </div>
@@ -50,11 +50,11 @@ function LinkedInContactItem ()
 function GithubContactItem ()
 {
     return (
-        <div className='d-flex '>
+        <div className='d-flex my-md-0 pe-3'>
             <div className={`${style.phone_icon} d-flex justify-content-center align-items-center `}>
                 <i className={`bi bi-github `}></i>
             </div>
-            <div className='ml-5'>
+            <div className={``}>
                 <h3 className='fw_18_px f_famil_raleway fw-bold'>Latest work</h3>
                 <p className='fw_14_px f_famil_roboto'>Github profile</p>
             </div>
@@ -69,8 +69,7 @@ function Contact ()
             <div className={`d-flex justify-content-center mb-3`}>
                 <h2 className={`f_famil_raleway text-center section_title`}>Contact</h2>
             </div>
-            <div className={`d-flex justify-content-around align-items-center ${style.contacts_board} py-4`}>
-                {/* <PhoneContactItem/> */}
+        <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
                 <EmailContactItem/>
                 <LinkedInContactItem/>
                 <GithubContactItem/>
