@@ -6,6 +6,7 @@ import MainBackImg from '@public/myPic.jpg';
 import { LegacyRef, RefObject, useEffect, useState } from 'react';
 import { Love_Light } from 'next/font/google';
 import useInView from '../CostumHooks/UseInView';
+import SectionTitle from './SectionTitle';
 
 const projectList = [
     {
@@ -136,17 +137,15 @@ const Portfolio: React.FC<portfolioProps> = ({ setCurrentPage,reference }) => {
     }, [isInView])
 
     return (
-        <div ref={reference} className={`container `}>
-            <div className={`d-flex justify-content-center mb-3`}>
-                <h2 className={`f_famil_raleway text-center section_title`}>Portfolio</h2>
-            </div>
+        <SectionTitle sectionName='Portfolio' reference={reference}>
+
             <div className={`d-flex justify-content-center `}>
                 <p>
                     Academic and personel projects 
                 </p>
             </div>
             <ProjectsNavBarList/>
-        </div>
+        </SectionTitle>
     )
 }
 

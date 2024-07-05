@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Resume.module.css'
 import React, { LegacyRef, RefObject, useEffect, useRef } from 'react';
 import useInView from '../CostumHooks/UseInView';
+import SectionTitle from './SectionTitle';
 
 
 const ResumeSummary = {
@@ -163,10 +164,7 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
     }, [isInView])
 
     return (
-        <div ref={reference}  className={`container ${style.resume} `}>
-            <div className='d-flex justify-content-center mb-5'>
-                <h2 className={`f_famil_raleway text-center section_title`}>Resume</h2>
-            </div>
+        <SectionTitle sectionName='Resume' reference={reference}>
             <div className='d-flex flex-column flex-md-row'>
                 <div className={`${style.me_setting}`}>
                     <ResumeSumary/>
@@ -176,7 +174,7 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
                     <AcademicResume/>
                 </div>
             </div>
-        </div>
+        </SectionTitle>
     )
 }
 

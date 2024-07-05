@@ -3,6 +3,7 @@ import style from '../styles/Contact.module.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import { LegacyRef, RefObject, useEffect } from 'react';
 import useInView from '../CostumHooks/UseInView';
+import SectionTitle from './SectionTitle';
 
 
 
@@ -105,17 +106,14 @@ const Contact: React.FC<contactProps> = ({ setCurrentPage, reference }) => {
     }, [isInView])
 
     return (
-        <div ref={reference} className={`container mt-5`}>
-            <div className={`d-flex justify-content-center mb-3`}>
-                <h2 className={`f_famil_raleway text-center section_title`}>Contacts</h2>
-            </div>
+        <SectionTitle sectionName='Contacts' reference={reference}>
             <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
                     <EmailContactItem/>
                     <LinkedInContactItem/>
                     <GithubContactItem/>
                 </div>
             <Messager/>
-        </div>
+        </SectionTitle>
     )
 }
 

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import style from '../styles/About.module.css'
 import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
 import useInView from '../CostumHooks/UseInView';
+import SectionTitle from './SectionTitle';
 
 const profileInfo = {
     name : "Soufiane Amajat",
@@ -135,11 +136,7 @@ const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
     }, [isInView])
 
     return(
-        <div ref={reference} className={`container mt-5`}>
-            <div className={`d-flex justify-content-center mb-3`}>
-                <h2 className={`f_famil_raleway text-center section_title`}>About</h2>
-            </div>
-
+        <SectionTitle sectionName='About' reference={reference}>
             <div ref={reference} className=' container rounded  shadow-lg p-4 my-5 '>
                 <div className='row'>
                     <div className='col-md-6'>
@@ -154,7 +151,7 @@ const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </SectionTitle>
     
     )
 }

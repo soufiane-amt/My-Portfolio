@@ -3,12 +3,12 @@ import { ReactNode, RefObject } from "react";
 
 
 interface SectionTitleProps {
+    children: ReactNode
     reference : RefObject<HTMLDivElement> | undefined;
     sectionName :string,
-    children: ReactNode
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ reference, sectionName, children }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ children , reference, sectionName }) => {
 
     return(
         <div ref={reference} className={`container mt-5`}>
