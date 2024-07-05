@@ -1,11 +1,10 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import profilePic from '@public/NavBar/logo.png';
 import Image from 'next/image';
 import  style from '../styles/Home.module.css';
 import MainBackImg from '@public/myPic.jpg';
-import { LegacyRef, useEffect, useState } from 'react';
-import internal from 'stream';
+import { LegacyRef, RefObject, useEffect, useState } from 'react';
+import useInView from '../CostumHooks/UseInView';
 
 
 const texts = ['Software developper', 'Cyber security enthusiast'];
@@ -60,10 +59,18 @@ function Introduction()
     )
 }
 
+
 interface homeProps {
-    reference : LegacyRef<HTMLDivElement> | undefined;
+    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
+    reference : RefObject<HTMLDivElement> | undefined;
 }
-const Home: React.FC<homeProps> = ({ reference }) => {
+const Home: React.FC<homeProps> = ({ setCurrentPage, reference }) => {
+    const  isInView  = useInView(reference);
+
+    useEffect (()=>{
+        if (isInView)
+        setCurrentPage("home")
+    }, [isInView])
 
     return (
         <div ref={reference} className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>

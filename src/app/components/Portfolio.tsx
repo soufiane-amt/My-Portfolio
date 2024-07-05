@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Portfolio.module.css';
 import Image from 'next/image';
 import MainBackImg from '@public/myPic.jpg';
-import { LegacyRef, useState } from 'react';
+import { LegacyRef, RefObject, useEffect, useState } from 'react';
 import { Love_Light } from 'next/font/google';
+import useInView from '../CostumHooks/UseInView';
 
 const projectList = [
     {
@@ -123,9 +124,16 @@ function ProjectsNavBarList ()
 }
 
 interface portfolioProps {
-    reference : LegacyRef<HTMLDivElement> | undefined;
+    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
+    reference : RefObject<HTMLDivElement> | undefined;
 }
-const Portfolio: React.FC<portfolioProps> = ({ reference }) => {
+const Portfolio: React.FC<portfolioProps> = ({ setCurrentPage,reference }) => {
+    const  isInView  = useInView(reference);
+
+    useEffect (()=>{
+        if (isInView)
+            setCurrentPage("portfolio")
+    }, [isInView])
 
     return (
         <div ref={reference} className={`container `}>

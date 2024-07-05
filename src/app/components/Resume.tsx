@@ -1,7 +1,8 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Resume.module.css'
-import React, { LegacyRef, useEffect, useRef } from 'react';
+import React, { LegacyRef, RefObject, useEffect, useRef } from 'react';
+import useInView from '../CostumHooks/UseInView';
 
 
 const ResumeSummary = {
@@ -149,12 +150,20 @@ function ResumeSumary ()
 
 
 interface resumeProps {
-    reference : LegacyRef<HTMLDivElement> | undefined;
+    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
+    reference : RefObject<HTMLDivElement> | undefined;
 }
-const Resume: React.FC<resumeProps> = ({ reference }) => {
+const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
+
+    const  isInView  = useInView(reference);
+
+    useEffect (()=>{
+        if (isInView)
+            setCurrentPage("resume")
+    }, [isInView])
 
     return (
-        <div ref={reference} className={`container ${style.resume} `}>
+        <div ref={reference}  className={`container ${style.resume} `}>
             <div className='d-flex justify-content-center mb-5'>
                 <h2 className={`f_famil_raleway text-center section_title`}>Resume</h2>
             </div>

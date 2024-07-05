@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileImg from '@public/profile-img.jpg';
 import Image from 'next/image';
 import style from '../styles/About.module.css'
-import { LegacyRef, useEffect, useRef, useState } from 'react';
+import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
+import useInView from '../CostumHooks/UseInView';
 
 const profileInfo = {
     name : "Soufiane Amajat",
@@ -122,10 +123,17 @@ function AboutMe(){
 
 
 interface aboutProps {
-    reference : LegacyRef<HTMLDivElement> | undefined;
+    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
+    reference : RefObject<HTMLDivElement> | undefined;
 }
-const About: React.FC<aboutProps> = ({ reference }) => {
-    
+const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
+    const  isInView  = useInView(reference);
+
+    useEffect (()=>{
+        if (isInView)
+            setCurrentPage("about")
+    }, [isInView])
+
     return(
         <div ref={reference} className=' container rounded  shadow-lg p-4 my-5 '>
             <div className='row'>

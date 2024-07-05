@@ -22,18 +22,37 @@ function CloseButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
     );
 }
 
+interface currentPageState {
+    currentPage: string;
+    setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
+  }
+    
 interface GeneralScrollSpyProps {
+    currentpageState: currentPageState;
     homeRef: RefObject<HTMLInputElement>;
     aboutRef: RefObject<HTMLInputElement>;
     resumeRef: RefObject<HTMLInputElement>;
+    portfolioRef: RefObject<HTMLInputElement>;
+    contactRef: RefObject<HTMLInputElement>;
   }
-  const GeneralScrollSpy: React.FC<GeneralScrollSpyProps> = ({homeRef,aboutRef,resumeRef}) => {
-    const [currentPage, setCurrentPage] = useState<string>("");
+  
+  const GeneralScrollSpy: React.FC<GeneralScrollSpyProps> = ({currentpageState, homeRef,aboutRef,resumeRef, portfolioRef ,contactRef}) => {
     const [expanded, setExpanded] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
+    const {currentPage, setCurrentPage} = currentpageState;
 
-    const handleButtonAnchorClick = (sectionRef: any) => {
-        sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    
+    const handleButtonAnchorClick = (sectionRef: React.RefObject<HTMLElement>) => {
+        const mainMarginSize = 90;
+        if (sectionRef.current) {
+          const elementPosition = sectionRef.current.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - mainMarginSize;
+      
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
       };
     
     useEffect(()=>{
@@ -86,13 +105,13 @@ interface GeneralScrollSpyProps {
                                 <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(aboutRef)}} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(resumeRef)}} className={`nav-link ${currentPage == "services" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#services">Resume</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(resumeRef)}} className={`nav-link ${currentPage == "resume" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#resume">Resume</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "portfolio" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(portfolioRef)}} className={`nav-link ${currentPage == "portfolio" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={handleButtonClick} className={`nav-link ${currentPage == "awards" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#awards">Awards</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(contactRef)}} className={`nav-link ${currentPage == "contacts" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#contacts">Contacts</a>
                             </li> 
                         </ul>
                 

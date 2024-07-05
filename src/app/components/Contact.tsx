@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Contact.module.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
-import { LegacyRef } from 'react';
+import { LegacyRef, RefObject, useEffect } from 'react';
+import useInView from '../CostumHooks/UseInView';
 
 
 
@@ -92,13 +93,21 @@ function Messager ()
 }
 
 interface contactProps {
-    reference : LegacyRef<HTMLDivElement> | undefined;
+    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
+    reference : RefObject<HTMLDivElement> | undefined;
 }
-const Contact: React.FC<contactProps> = ({ reference }) => {
+const Contact: React.FC<contactProps> = ({ setCurrentPage, reference }) => {
+    const  isInView  = useInView(reference);
+
+    useEffect (()=>{
+        if (isInView)
+                setCurrentPage("contacts")
+    }, [isInView])
+
     return (
         <div ref={reference} className={`container mt-5`}>
             <div className={`d-flex justify-content-center mb-3`}>
-                <h2 className={`f_famil_raleway text-center section_title`}>Contact</h2>
+                <h2 className={`f_famil_raleway text-center section_title`}>Contacts</h2>
             </div>
             <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
                     <EmailContactItem/>
