@@ -135,20 +135,27 @@ const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
     }, [isInView])
 
     return(
-        <div ref={reference} className=' container rounded  shadow-lg p-4 my-5 '>
-            <div className='row'>
-                <div className='col-md-6'>
-                    <div className='d-flex flex-column'>
-                        <AboutContacts />
-                        <AboutSkills />
-                    </div>
-                </div>
+        <div ref={reference} className={`container mt-5`}>
+            <div className={`d-flex justify-content-center mb-3`}>
+                <h2 className={`f_famil_raleway text-center section_title`}>About</h2>
+            </div>
 
-                <div className='col-md-6'>
-                    <AboutMe/>
+            <div ref={reference} className=' container rounded  shadow-lg p-4 my-5 '>
+                <div className='row'>
+                    <div className='col-md-6'>
+                        <div className='d-flex flex-column'>
+                            <AboutContacts />
+                            <AboutSkills />
+                        </div>
+                    </div>
+
+                    <div className='col-md-6'>
+                        <AboutMe/>
+                    </div>
                 </div>
             </div>
         </div>
+    
     )
 }
 
