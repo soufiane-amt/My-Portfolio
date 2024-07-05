@@ -11,6 +11,7 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import { useRef, useState } from "react";
 import FooterPage from "./components/FooterPage";
+import Loading from "./components/Loading";
 
 
 export default function MainPage() {
@@ -27,22 +28,22 @@ export default function MainPage() {
 
 
   return (
-    <div >
-      <header>
-          <GeneralScrollSpy currentpageState={{currentPage, setCurrentPage}} homeRef={homeRef}
-              aboutRef={aboutRef}
-              resumeRef={resumeRef}
-              portfolioRef={portfolioRef} 
-              contactRef={contactRef} />
-      </header>
-      <main className="container-fluid p-0 bg-white">
-        <Home  setCurrentPage={setCurrentPage} reference={homeRef}/>
-        <About setCurrentPage={setCurrentPage} reference={aboutRef}/>
-        <Resume setCurrentPage={setCurrentPage} reference={resumeRef}/>
-        <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
-        <Contact setCurrentPage={setCurrentPage} reference={contactRef}/>
-      </main>
-      <FooterPage/>
-    </div>
+      <div >
+        <header>
+            <GeneralScrollSpy currentpageState={{currentPage, setCurrentPage}} homeRef={homeRef}
+                aboutRef={aboutRef}
+                resumeRef={resumeRef}
+                portfolioRef={portfolioRef} 
+                contactRef={contactRef} />
+        </header>
+        <main className="container-fluid p-0 bg-white">
+          <Home  setCurrentPage={setCurrentPage} reference={homeRef}/>
+          <About setCurrentPage={setCurrentPage} reference={aboutRef}/>
+          <Resume setCurrentPage={setCurrentPage} reference={resumeRef}/>
+          <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
+          <Contact setCurrentPage={setCurrentPage} reference={contactRef}/>
+        </main>
+        <FooterPage/>
+      </div>
   );
 }

@@ -104,3 +104,8 @@
      box-shadow: 3px 2px 23px -15px  #FFFFFF;
   }
   
+  .logo_img{
+    cursor: pointer;
+    width:127px;
+    height: 47px;
+  }

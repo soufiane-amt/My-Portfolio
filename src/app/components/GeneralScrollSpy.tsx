@@ -1,6 +1,6 @@
 "use client";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import profilePic from '@public/NavBar/logo.png';
+import profilePic from '@public/NavBar/logo2.jpeg';
 import Image from 'next/image';
 import style from '../styles/GeneralScrollSpy.module.css';
 import { RefObject, useEffect, useState } from 'react';
@@ -41,7 +41,7 @@ interface GeneralScrollSpyProps {
     const [scrolled, setScrolled] = useState<boolean>(false);
     const {currentPage, setCurrentPage} = currentpageState;
 
-    
+
     const handleButtonAnchorClick = (sectionRef: React.RefObject<HTMLElement>) => {
         const mainMarginSize = 90;
         if (sectionRef.current) {
@@ -93,7 +93,7 @@ interface GeneralScrollSpyProps {
         <nav className={`navbar navbar-expand-lg bg_general_color navbar-dark fixed-top py-4 ${scrolled ? `${style.white_shadow}`:''}`}>
             <div className={`container-fluid d-flex  justify-content-between mx-5`}>
                 <div>
-                    <Image src={profilePic} alt="Logo" />
+                    <Image className={`${style.logo_img}`} src={profilePic} alt="Logo" />
                 </div>
                 {!expanded ? <HumburgerButton toggleNavbar={toggleNavbar}/>: <CloseButton toggleNavbar={toggleNavbar}/>}
                 <div className={`collapse navbar-collapse position-relative  ${expanded ? `show ${style.top_vh_10}` : ''} `} id="navbarNav">
