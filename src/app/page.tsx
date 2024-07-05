@@ -10,6 +10,7 @@ import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import { useRef, useState } from "react";
+import FooterPage from "./components/FooterPage";
 
 
 export default function MainPage() {
@@ -41,6 +42,7 @@ export default function MainPage() {
         <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
         <Contact setCurrentPage={setCurrentPage} reference={contactRef}/>
       </main>
+      <FooterPage/>
     </div>
   );
 }

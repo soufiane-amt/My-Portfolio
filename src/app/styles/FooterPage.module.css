@@ -1,0 +1,40 @@
+.footer_background {
+    background-color: #076cdd;
+    height: 190px;
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.contact_ref {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.668);
+    color: rgba(255, 255, 255, 0.668);
+    border-radius: 50%;
+    padding-block: 8px;
+    padding-inline: 12px;
+    margin-inline: 5px;
+    transition: all 0.5s ease;
+}
+
+.contact_ref:hover{
+    border: 1px solid rgba(255, 255, 255);
+    color: rgba(255, 255, 255);
+    cursor: pointer;
+}
+
+.footer_background p:last-child{
+    font-size: small;
+    color: rgb(238, 229, 229);
+}
+
+
+.footer_background span {
+    color:  rgba(255, 255, 255, 0.668);
+    transition: all 0.5s ease;
+}
+.footer_background span:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+
+}

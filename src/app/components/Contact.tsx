@@ -7,20 +7,6 @@ import SectionTitle from './SectionTitle';
 
 
 
-function PhoneContactItem ()
-{
-    return (
-        <div className='d-flex  '>
-            <div className={`${style.phone_icon} d-flex justify-content-center align-items-center `}>
-                <i className={`bi bi-telephone  flex-shrink-0 `}></i>
-            </div>
-            <div className='ml-5'>
-                <h3 className='fw_18_px f_famil_raleway fw-bold'>Call Us</h3>
-                <p className='fw_14_px f_famil_roboto'>+212689398453</p>
-            </div>
-        </div>
-    )
-}
 function EmailContactItem ()
 {
     return (
