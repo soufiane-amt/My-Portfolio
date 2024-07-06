@@ -12,7 +12,7 @@
 .fadeInBottom { animation-name: fadeInBottom }
 @keyframes fadeInBottom {
   from {
-      transform: translateY(20%);
+      transform: translateY(50%);
   }
   to { opacity: 1 }
 }

@@ -5,6 +5,7 @@ import  style from '../styles/Home.module.css';
 import MainBackImg from '@public/myPic.jpg';
 import { LegacyRef, RefObject, useEffect, useState } from 'react';
 import useInView from '../CostumHooks/UseInView';
+import FadeTop from './FadeTop';
 
 
 const texts = ['Software developper', 'Cyber security enthusiast'];
@@ -79,7 +80,8 @@ const Home: React.FC<homeProps> = ({ setCurrentPage, reference }) => {
                 alt="My picture"
                 className={`img-fluid fade_in_element_5_s ${style.dimmed_image}`}
             />
-            <Introduction/>
+
+                <Introduction/>
         </div>
     );
 }

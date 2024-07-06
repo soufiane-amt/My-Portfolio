@@ -39,8 +39,8 @@ export default function MainPage() {
           <Home  setCurrentPage={setCurrentPage} reference={homeRef}/>
           <About setCurrentPage={setCurrentPage} reference={aboutRef}/>
           <Resume setCurrentPage={setCurrentPage} reference={resumeRef}/>
-          {/* <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
-          <Contact setCurrentPage={setCurrentPage} reference={contactRef}/> */}
+          <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
+          <Contact setCurrentPage={setCurrentPage} reference={contactRef}/>
         </main>
         <FooterPage/>
       </div>

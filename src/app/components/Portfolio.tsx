@@ -7,6 +7,7 @@ import { LegacyRef, RefObject, useEffect, useState } from 'react';
 import { Love_Light } from 'next/font/google';
 import useInView from '../CostumHooks/UseInView';
 import SectionTitle from './SectionTitle';
+import FadeTop from './FadeTop';
 
 const projectList = [
     {
@@ -137,15 +138,17 @@ const Portfolio: React.FC<portfolioProps> = ({ setCurrentPage,reference }) => {
     }, [isInView])
 
     return (
-        <SectionTitle sectionName='Portfolio' reference={reference}>
+        <FadeTop reference={reference}>
+            <SectionTitle sectionName='Portfolio' reference={reference}>
 
-            <div className={`d-flex justify-content-center `}>
-                <p>
-                    Academic and personel projects 
-                </p>
-            </div>
-            <ProjectsNavBarList/>
-        </SectionTitle>
+                <div className={`d-flex justify-content-center `}>
+                    <p>
+                        Academic and personel projects 
+                    </p>
+                </div>
+                <ProjectsNavBarList/>
+            </SectionTitle>
+        </FadeTop>
     )
 }
 

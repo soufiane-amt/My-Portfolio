@@ -4,6 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import { LegacyRef, RefObject, useEffect } from 'react';
 import useInView from '../CostumHooks/UseInView';
 import SectionTitle from './SectionTitle';
+import FadeTop from './FadeTop';
 
 
 
@@ -92,14 +93,16 @@ const Contact: React.FC<contactProps> = ({ setCurrentPage, reference }) => {
     }, [isInView])
 
     return (
-        <SectionTitle sectionName='Contacts' reference={reference}>
-            <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
-                    <EmailContactItem/>
-                    <LinkedInContactItem/>
-                    <GithubContactItem/>
-                </div>
-            <Messager/>
-        </SectionTitle>
+        <FadeTop reference={reference}>
+            <SectionTitle sectionName='Contacts' reference={reference}>
+                <div className={`d-flex flex-column flex-md-row justify-content-between align-items-lg-center  ${style.contacts_board} pt-4 ps-4 ps-ms-0`}>
+                        <EmailContactItem/>
+                        <LinkedInContactItem/>
+                        <GithubContactItem/>
+                    </div>
+                <Messager/>
+            </SectionTitle>
+        </FadeTop>
     )
 }
 
