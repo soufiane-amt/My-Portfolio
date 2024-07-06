@@ -1,19 +1,18 @@
-.section_title_wrap {
-    margin-top: 110px;
+.fade_top{
     transform:  translateY(0%);
+
 }
 
 
 .cssanimation{
-  animation-duration: 1s;
+  animation-duration: 2s;
 }
 
 
 .fadeInBottom { animation-name: fadeInBottom }
 @keyframes fadeInBottom {
   from {
-      opacity: 0;
-      transform: translateY(30%);
+      transform: translateY(50%);
   }
   to { opacity: 1 }
 }

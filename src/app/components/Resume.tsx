@@ -1,9 +1,11 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Resume.module.css'
-import React, { LegacyRef, RefObject, useEffect, useRef } from 'react';
+import React, { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
 import useInView from '../CostumHooks/UseInView';
 import SectionTitle from './SectionTitle';
+import FadeTop from './FadeTop';
+import useInViewOnce from '../CostumHooks/UseInViewOnce';
 
 
 const ResumeSummary = {
@@ -156,25 +158,50 @@ interface resumeProps {
 }
 const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
 
-    const  isInView  = useInView(reference);
+        const isInView = useInView(reference);
+        const isInViewOnce = useInViewOnce(reference);
+        const [showFirst, setShowFirst] = useState(false);
+        const [showSecond, setShowSecond] = useState(false);
+      
+        useEffect(() => {
+          if (isInViewOnce) {
+            setShowFirst(true);
+            const timer = setTimeout(() => {
+              setShowSecond(true);
+            }, 50); // 1500ms delay
+            return () => clearTimeout(timer); // Cleanup timer
+          }
+        }, [isInViewOnce]);
+      
+        useEffect(() => {
+          if (isInView) {
+            setCurrentPage("resume");
+          }
+        }, [isInView]);
+      
+          return (
+            <FadeTop reference={reference}>
+                <SectionTitle sectionName='Resume' reference={reference}>
+                    <div className='d-flex flex-column flex-md-row'>
+                        { showFirst &&
+                            <FadeTop key="1" reference={reference}>
+                                <div className={`${style.me_setting}`}>
+                                    <ResumeSumary/>
+                                    <ResumeEducation/>
+                                </div>
+                            </FadeTop>
+                        }
 
-    useEffect (()=>{
-        if (isInView)
-            setCurrentPage("resume")
-    }, [isInView])
-
-    return (
-        <SectionTitle sectionName='Resume' reference={reference}>
-            <div className='d-flex flex-column flex-md-row'>
-                <div className={`${style.me_setting}`}>
-                    <ResumeSumary/>
-                    <ResumeEducation/>
-                </div>
-                <div>
-                    <AcademicResume/>
-                </div>
-            </div>
-        </SectionTitle>
+                        { 
+                            <FadeTop key="2" reference={reference}>
+                                <div>
+                                    <AcademicResume/>
+                                </div>
+                            </FadeTop>
+                        }
+                    </div>
+                </SectionTitle>
+                </FadeTop>
     )
 }
 

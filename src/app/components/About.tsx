@@ -6,6 +6,7 @@ import style from '../styles/About.module.css'
 import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
 import useInView from '../CostumHooks/UseInView';
 import SectionTitle from './SectionTitle';
+import FadeTop from './FadeTop';
 
 const profileInfo = {
     name : "Soufiane Amajat",
@@ -136,7 +137,7 @@ const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
     }, [isInView])
 
     return(
-        <SectionTitle sectionName='About' reference={reference}>
+        <FadeTop reference={reference}>
             <div ref={reference} className=' container rounded  shadow-lg p-4 my-5 '>
                 <div className='row'>
                     <div className='col-md-6'>
@@ -151,7 +152,7 @@ const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
                     </div>
                 </div>
             </div>
-        </SectionTitle>
+        </FadeTop>
     
     )
 }
