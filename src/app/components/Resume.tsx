@@ -168,7 +168,7 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
             setShowFirst(true);
             const timer = setTimeout(() => {
               setShowSecond(true);
-            }, 50); // 1500ms delay
+            }, 500); //  delay
             return () => clearTimeout(timer); // Cleanup timer
           }
         }, [isInViewOnce]);
@@ -192,7 +192,7 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
                             </FadeTop>
                         }
 
-                        { 
+                        { showSecond &&
                             <FadeTop key="2" reference={reference}>
                                 <div>
                                     <AcademicResume/>
