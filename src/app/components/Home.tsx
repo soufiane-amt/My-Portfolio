@@ -74,8 +74,8 @@ const Home: React.FC<homeProps> = ({ setCurrentPage, reference }) => {
 
     return (
         <div ref={reference} className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>
-            <Image
-                src={MainBackImg}
+            <img
+                src={MainBackImg.src}
                 alt="My picture"
                 className={`img-fluid fade_in_element_5_s ${style.dimmed_image}`}
             />

@@ -5,14 +5,14 @@
 
 
 .cssanimation{
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 
 .fadeInBottom { animation-name: fadeInBottom }
 @keyframes fadeInBottom {
   from {
-      transform: translateY(50%);
+      transform: translateY(20%);
   }
   to { opacity: 1 }
 }

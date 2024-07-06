@@ -12,7 +12,7 @@ function FadeTop ({children, reference}:FadeTopProps){
     const isInView = useInViewOnce(reference);
     
     return(
-        <div ref={reference} className={` ${style.fade_top} ${isInView ? ` ${style.cssanimation} ${style.fadeInBottom}`: ''}`}>
+        <div ref={reference} className={`${isInView ? ` ${style.cssanimation} ${style.fadeInBottom}`: 'opacity-0'} ${style.fade_top}  `}>
             {children}
         </div>
     )
