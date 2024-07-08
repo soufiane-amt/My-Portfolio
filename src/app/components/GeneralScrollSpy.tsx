@@ -18,7 +18,7 @@ function HumburgerButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
 
 function CloseButton({toggleNavbar}:{toggleNavbar :ClickHandler}) {
     return (
-        <button type="button" className="btn-close text-reset btn-close-white" aria-label="Close" onClick={toggleNavbar}></button>
+        <button type="button" className={`btn-close text-reset btn-close-white ${style.close_button}`} aria-label="Close" onClick={toggleNavbar}></button>
     );
 }
 
@@ -90,28 +90,28 @@ interface GeneralScrollSpyProps {
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg bg_general_color navbar-dark fixed-top py-3 ${scrolled ? `${style.white_shadow}`:''}`}>
+        <nav className={`${style.nav_bar} navbar navbar-expand-lg bg_general_color navbar-dark fixed-top py-3 ${scrolled ? `${style.white_shadow}`:''}`}>
             <div className={`container-fluid d-flex  justify-content-between mx-5`}>
                 <div>
                     <Image className={`${style.logo_img}`} src={profilePic} alt="Logo" />
                 </div>
                 {!expanded ? <HumburgerButton toggleNavbar={toggleNavbar}/>: <CloseButton toggleNavbar={toggleNavbar}/>}
-                <div className={`collapse navbar-collapse position-relative  ${expanded ? `show ${style.top_vh_10}` : ''} `} id="navbarNav">
-                    <ul className={`${style.fw_14_px} navbar-nav  d-flex justify-content-end w-100  ${expanded ? `bg-white  ${style.bd_radius_6_px} ps-3 py-2 ` : ''} `}>
+                <div className={`collapse navbar-collapse   ${expanded ? `show ${style.top_vh_10}  ${style.test}` : 'position-relative'} `} id="navbarNav">
+                    <ul className={`${style.fw_14_px} navbar-nav w-100 d-flex justify-content-end   ${expanded ? `bg-white  ${style.bd_radius_6_px} ps-3 py-2 ` : ''} `}>
                         <li className={`nav-item px-3    ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "home" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(homeRef)}} className={`nav-link ${currentPage == "home" ? `${style.selected_nav_element}` : "" } ${expanded ? ` ` : `text-white ${style.hover_button_animation}`}`} href="#home">Home</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(aboutRef)}} className={`nav-link ${currentPage == "about" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(aboutRef)}} className={`nav-link ${currentPage == "about" ? `${style.selected_nav_element}` : "" } ${expanded ? ` ` : `text-white ${style.hover_button_animation}`}`} href="#about">About</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(resumeRef)}} className={`nav-link ${currentPage == "resume" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#resume">Resume</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(resumeRef)}} className={`nav-link ${currentPage == "resume" ? `${style.selected_nav_element}` : "" } ${expanded ? ` ` : `text-white ${style.hover_button_animation}`}`} href="#resume">Resume</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(portfolioRef)}} className={`nav-link ${currentPage == "portfolio" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(portfolioRef)}} className={`nav-link ${currentPage == "portfolio" ? `${style.selected_nav_element}` : "" } ${expanded ? ` ` : `text-white ${style.hover_button_animation}`}`} href="#portfolio">Portfolio</a>
                             </li>
                             <li className={`nav-item px-3  ${style.f_famil_poppins}`}>
-                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(contactRef)}} className={`nav-link ${currentPage == "contacts" ? `${style.border_button_bottom}` : "" } ${expanded ? `text-dark ` : `text-white ${style.hover_button_animation}`}`} href="#contacts">Contacts</a>
+                                <a onClick={(e) => {handleButtonClick(e); handleButtonAnchorClick(contactRef)}} className={`nav-link ${currentPage == "contacts" ? `${style.selected_nav_element}` : "" } ${expanded ? ` ` : `text-white ${style.hover_button_animation}`}`} href="#contacts">Contacts</a>
                             </li> 
                         </ul>
                 
