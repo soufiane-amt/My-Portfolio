@@ -87,10 +87,15 @@
 .selected_nav_element{
     position: relative;
     display: inline-block;
-    color: rgb(0, 120, 255) !important;
     font-weight: bold;
     border: none;
     cursor: pointer;
+}
+
+@media (max-width: 990px) {
+    .selected_nav_element{
+    color: rgb(0, 120, 255) !important;
+    }
 }
 .selected_nav_element::after {
     content: '';

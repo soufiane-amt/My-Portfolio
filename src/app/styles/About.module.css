@@ -21,6 +21,12 @@
         width: 480px;
     }    
 }
+@media (max-width: 535px) {
+    .about_contacts img {
+        height: auto;
+        width: auto;
+    }    
+}
 
 .h_10px{
     height: 10px;
