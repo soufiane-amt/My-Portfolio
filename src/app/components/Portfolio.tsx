@@ -3,11 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from '../styles/Portfolio.module.css';
 import Image from 'next/image';
 import MainBackImg from '@public/myPic.jpg';
-import { LegacyRef, RefObject, useEffect, useState } from 'react';
+import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
 import { Love_Light } from 'next/font/google';
 import useInView from '../CostumHooks/UseInView';
 import SectionTitle from './SectionTitle';
 import FadeTop from './FadeTop';
+import useInViewOnce from '../CostumHooks/UseInViewOnce';
 
 const projectList = [
     {
@@ -55,32 +56,50 @@ interface ProjectCardType {
     decription : string, 
     imgSrc : string, 
 }
-const ProjectCard: React.FC<{ project: ProjectCardType }> = ({ project }) => {
+const ProjectCard: React.FC<{ project: ProjectCardType; index: number }> = ({ project, index }) =>
+{
+    const reference = useRef(null);
+
+    const isInView = useInViewOnce(reference)
     return (
-        <div className={`${style.project_card} col-lg-4 col-md-6  position-relative`}>
-            <div>
-                <img 
-                    src={`${project.imgSrc}`} 
-                    alt="Project Image" 
-                    className='img-fluid'
-                    />
+        <div ref={reference} style={{ animationDelay: `${index * 0.5}s` }} className={`${style.project_card} ${style.fade_in} col-lg-4 col-md-6  position-relative`}>
+        { (isInView && 
+            <div style={{ animationDelay: `${index * 0.5}s` }} className={`${style.fade_in} ${style.fade_in_up} `}>
+                                <div>
+                                    <img 
+                                        src={`${project.imgSrc}`} 
+                                        alt="Project Image" 
+                                        className='img-fluid'
+                                        />
+                                </div>
+                                <div className={` position-absolute ${style.card_description} d-flex flex-column `}>
+                                    <h4 className='f_famil_raleway fw_18_px fw-bold'>{`${project.name}`} </h4>
+                                    <p className='f_style_italic f_famil_roboto fw_14_px'>{`${project.decription}`} </p>
+                                </div>
             </div>
-            <div className={` position-absolute ${style.card_description} d-flex flex-column `}>
-                <h4 className='f_famil_raleway fw_18_px fw-bold'>{`${project.name}`} </h4>
-                <p className='f_style_italic f_famil_roboto fw_14_px'>{`${project.decription}`} </p>
+            )
+
+            }
             </div>
-        </div>
     )
 }
+
+
 
 function ProjectsNavBarList ()
 {
     const [currentList, setCurrentList] = useState<string>("All")
 
+    useEffect (()=>{
+        const timer = setTimeout (()=>{
+            
+        }, 500)
+        // return clearTimeout
+    }, [])
     const handleButtonClick = (e:any)=>{
         const hrefValue = e.target.getAttribute('href').substring(1);
         setCurrentList(hrefValue);
-}
+    }
 
     return (
         <div className={`d-flex flex-column justify-content-center mt-3 `}>
@@ -110,12 +129,13 @@ function ProjectsNavBarList ()
             </nav>
                 <div className={`row d-flex justify-content-center`} >
                     {
-                        projectList.map ((item)=>
+                        projectList.map ((item, index)=>
                         {
+                            
                             if (currentList === "All")
-                                return <ProjectCard key={item.name} project={item}/>;
+                                return <ProjectCard key={item.name} index={index} project={item}/>;
                             else if (item.type === currentList)
-                                return <ProjectCard key={item.name} project={item}/>;
+                                return <ProjectCard key={item.name} index={index} project={item}/>;
                             
                         })
                             
@@ -138,17 +158,16 @@ const Portfolio: React.FC<portfolioProps> = ({ setCurrentPage,reference }) => {
     }, [isInView])
 
     return (
-        <FadeTop reference={reference}>
-            <SectionTitle sectionName='Portfolio' reference={reference}>
-
+        <SectionTitle sectionName='Portfolio' reference={reference}>
                 <div className={`d-flex justify-content-center `}>
                     <p>
                         Academic and personel projects 
                     </p>
                 </div>
-                <ProjectsNavBarList/>
-            </SectionTitle>
-        </FadeTop>
+                <FadeTop reference={reference}>
+                    <ProjectsNavBarList/>
+                </FadeTop>
+        </SectionTitle>
     )
 }
 

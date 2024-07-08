@@ -168,7 +168,7 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
             setShowFirst(true);
             const timer = setTimeout(() => {
               setShowSecond(true);
-            }, 500); //  delay
+            }, 300); //  delay
             return () => clearTimeout(timer); // Cleanup timer
           }
         }, [isInViewOnce]);
@@ -180,7 +180,6 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
         }, [isInView]);
       
           return (
-            <FadeTop reference={reference}>
                 <SectionTitle sectionName='Resume' reference={reference}>
                     <div className='d-flex flex-column flex-md-row'>
                         { 
@@ -201,7 +200,6 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
                         }
                     </div>
                 </SectionTitle>
-                </FadeTop>
     )
 }
 
