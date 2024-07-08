@@ -183,7 +183,7 @@ const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
             <FadeTop reference={reference}>
                 <SectionTitle sectionName='Resume' reference={reference}>
                     <div className='d-flex flex-column flex-md-row'>
-                        { showFirst &&
+                        { 
                             <FadeTop key="1" reference={reference}>
                                 <div className={`${style.me_setting}`}>
                                     <ResumeSumary/>
