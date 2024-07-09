@@ -105,8 +105,3 @@ opacity: 0;
   all:unset;
   cursor: pointer;
 }
-
-.contact_redirection:hover{
-  color: #0078ff;
-  font-weight: bold;
-}
