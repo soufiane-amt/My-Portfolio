@@ -116,10 +116,18 @@
   
   .logo_img{
     cursor: pointer;
-    width:127px;
+    width:137px;
     height: 47px;
   }
-
+  @media (max-width: 341px) {
+   .logo_img{
+    width:130px;
+    height: 50px;
+   } 
+   .main_nav_content{
+   margin-inline: 0 !important;
+   }
+  }
   .test {
     position: absolute;
     top: 0;
@@ -130,8 +138,8 @@
 }
 
   .test ul{
-    margin-inline: 20px ;
-    width: 95vw!important;
+    margin-inline: auto ;
+    width: 90vw!important;
     height: 80vh;
     position: relative;
     top: 60px;

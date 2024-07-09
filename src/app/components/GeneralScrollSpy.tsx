@@ -91,7 +91,7 @@ interface GeneralScrollSpyProps {
 
     return (
         <nav className={`${style.nav_bar} navbar navbar-expand-lg bg_general_color navbar-dark fixed-top py-3 ${scrolled ? `${style.white_shadow}`:''}`}>
-            <div className={`container-fluid d-flex  justify-content-between mx-5`}>
+            <div className={`container-fluid d-flex  justify-content-between mx-5 ${style.main_nav_content}`}>
                 <div>
                     <Image className={`${style.logo_img}`} src={profilePic} alt="Logo" />
                 </div>

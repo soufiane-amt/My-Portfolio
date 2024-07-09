@@ -107,22 +107,27 @@ function ProjectsNavBarList ()
                 <div className=''>
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "All" ? "text-primary" : ""}`} href="#All">All</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList == "All" ? "text-primary" : ""}`} href="#All">All</a>
                         </li>
                         <li className="nav-item active">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "Web" ? "text-primary" : ""}`} href="#Web">Web</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList == "Web" ? "text-primary" : ""}`} href="#Web">Web</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "Systems Programming" ? "text-primary" : ""}`} href="#Systems Programming">Systems Programming</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${style.a_} ${style.list_item} ${currentList == "Systems Programming" ? "text-primary" : ""}`} href="#Systems Programming">
+                                    <span className={`${style.a_first_word}`}>Systems</span>
+                                        {/* <br/> */}
+                                    <span className={`${style.a_last_word}`}>Programming</span>
+
+                                </a>
+                        </li>
+                        {/* <li className="nav-item">
+                            <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList == "Algorithms" ? "text-primary" : ""}`} href="#Algorithms">Algorithms</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList == "Algorithms" ? "text-primary" : ""}`} href="#Algorithms">Algorithms</a>
-                        </li>
+                            <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList  == "Graphics" ? "text-primary" : ""}`} href="#Graphics">Graphics</a>
+                        </li> */}
                         <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList  == "Graphics" ? "text-primary" : ""}`} href="#Graphics">Graphics</a>
-                        </li>
-                        <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${currentList  =="Others" ? "text-primary" : ""}`} href="#Others">Others</a>
+                            <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList  =="Others" ? "text-primary" : ""}`} href="#Others">Others</a>
                         </li>
                     </ul>
                 </div>
@@ -159,12 +164,12 @@ const Portfolio: React.FC<portfolioProps> = ({ setCurrentPage,reference }) => {
 
     return (
         <SectionTitle sectionName='Portfolio' reference={reference}>
-                <div className={`d-flex justify-content-center `}>
-                    <p>
-                        Academic and personel projects 
-                    </p>
-                </div>
                 <FadeTop reference={reference}>
+                    <div className={`d-flex justify-content-center `}>
+                        <p>
+                            Academic and personel projects 
+                        </p>
+                    </div>
                     <ProjectsNavBarList/>
                 </FadeTop>
         </SectionTitle>
