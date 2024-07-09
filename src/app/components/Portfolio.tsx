@@ -47,6 +47,60 @@ const projectList = [
         decription : "Raycasting game project",
         imgSrc : "/ProjectElement/cubTd.webp"
     },
+    {
+        name : "Libft",
+        type : "Systems Programming",
+        decription : "Reimplementation of C functions in a custom library",
+        imgSrc : "/ProjectElement/libft.png"
+    },
+    {
+        name : "born2beroot",
+        type : "Others",
+        decription : "C++ Data structures low level programing ",
+        imgSrc : "/ProjectElement/borntoberoot.png"
+    },
+    {
+        name : "Netpractice",
+        type : "Others",
+        decription : "Raycasting game project",
+        imgSrc : "/ProjectElement/netpractice.png"
+    },
+    {
+        name : "philosophers",
+        type : "Systems Programming",
+        decription : "Reimplementation of C functions in a custom library",
+        imgSrc : "/ProjectElement/philosophers.webp"
+    },
+    {
+        name : "pipex",
+        type : "Systems Programming",
+        decription : "C++ Data structures low level programing ",
+        imgSrc : "/ProjectElement/pipex.webp"
+    },
+    {
+        name : "get_next_line",
+        type : "Systems Programming",
+        decription : "Raycasting game project",
+        imgSrc : "/ProjectElement/get_next_line.webp"
+    },
+    {
+        name : "so_long",
+        type : "Graphics",
+        decription : "Raycasting game project",
+        imgSrc : "/ProjectElement/so_long.webp"
+    },
+    {
+        name : "push_swap",
+        type : "Graphics",
+        decription : "Raycasting game project",
+        imgSrc : "/ProjectElement/push_swap.webp"
+    },
+    {
+        name : "ft_printf",
+        type : "Others",
+        decription : "Raycasting game project",
+        imgSrc : "/ProjectElement/ft_printf.webp"
+    },
 ]
 
 
