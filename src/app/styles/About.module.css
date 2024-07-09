@@ -2,6 +2,11 @@
     margin-right: 28px;
 }    
 
+.about_contacts img {
+    height: 170px;
+    width: 170px;
+
+}
 @media (max-width: 990px) {
     .about_contacts {
         flex-direction: column;

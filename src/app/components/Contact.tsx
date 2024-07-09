@@ -33,7 +33,11 @@ function LinkedInContactItem ()
             </div>
             <div className={``}>
                 <h3 className='fw_18_px f_famil_raleway fw-bold'>Follow Us</h3>
-                <p className='fw_14_px f_famil_roboto'>LinkedIn profile</p>
+                <p className='fw_14_px f_famil_roboto'>
+                    <a href='https://www.linkedin.com/in/soufiane-amajat/' className={`${style.contact_redirection}`}>
+                        LinkedIn profile
+                    </a>
+                    </p>
             </div>
         </div>
     )
@@ -47,7 +51,11 @@ function GithubContactItem ()
             </div>
             <div className={``}>
                 <h3 className='fw_18_px f_famil_raleway fw-bold'>Latest work</h3>
-                <p className='fw_14_px f_famil_roboto'>Github profile</p>
+                <p className={`fw_14_px f_famil_roboto `} >
+                    <a href='https://github.com/soufiane-amt' className={`${style.contact_redirection}`}>
+                        Github profile
+                    </a>
+                </p>
             </div>
         </div>
     )

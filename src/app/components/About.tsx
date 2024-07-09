@@ -10,7 +10,7 @@ import FadeTop from './FadeTop';
 
 const profileInfo = {
     name : "Soufiane Amajat",
-    profile : "Full Stack Developer",
+    profile : "Software Developer",
     email : "amajatsoufiane@gmail.com",
     phone : "+212689398453"
 }
@@ -102,8 +102,6 @@ function AboutContacts ()
             <Image
                 src={ProfileImg}
                 alt="Profile picture"
-                height={170}
-                width={170}
             />
             <ProfileInfo />
         </div>

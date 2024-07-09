@@ -100,3 +100,13 @@
 animation: fadeInRight 1s ease forwards;
 opacity: 0;
 } 
+
+.contact_redirection{
+  all:unset;
+  cursor: pointer;
+}
+
+.contact_redirection:hover{
+  color: #0078ff;
+  font-weight: bold;
+}
