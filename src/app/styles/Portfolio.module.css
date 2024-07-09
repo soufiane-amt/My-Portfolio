@@ -82,3 +82,9 @@
     }
 }
 
+@media (max-width: 215px) {
+    .list_item{
+        font-size: 8px;
+    }
+}
+

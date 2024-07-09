@@ -37,7 +37,7 @@ export default function MainPage() {
         </header>
         <main className="container-fluid p-0 bg-white">
           <Home  setCurrentPage={setCurrentPage} reference={homeRef}/>
-          {/* <About setCurrentPage={setCurrentPage} reference={aboutRef}/> */}
+          <About setCurrentPage={setCurrentPage} reference={aboutRef}/>
           <Resume setCurrentPage={setCurrentPage} reference={resumeRef}/>
           <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
           <Contact setCurrentPage={setCurrentPage} reference={contactRef}/>

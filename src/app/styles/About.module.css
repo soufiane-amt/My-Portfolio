@@ -37,3 +37,7 @@
 }
 
 /* GeneralScrollSpy.module.css */
+.long_word {
+    word-break: break-all;
+  }
+  

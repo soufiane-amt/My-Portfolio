@@ -70,13 +70,13 @@ function AboutSkills (){
     return (
         <div className={`mt-4`}>
             <h5 className={`${style.fw_18_px} fw-bold ${style.f_famil_raleway}`}>Skills</h5>
-            <SkillBar skillData={{skillName:"HTML", percentage: "70", color: ""}} />
-            <SkillBar skillData={{skillName:"CSS", percentage: "20", color: "success"}} />
-            <SkillBar skillData={{skillName:"Next.js", percentage: "30", color: "info"}} />
-            <SkillBar skillData={{skillName:"Nest.js", percentage: "40", color: "warning"}} />
-            <SkillBar skillData={{skillName:"Javascript", percentage: "50", color: "danger"}} />
-            <SkillBar skillData={{skillName:"C", percentage: "70", color: "secondary"}} />
-            <SkillBar skillData={{skillName:"C++", percentage: "90", color: "dark"}} />
+            <SkillBar skillData={{skillName:"HTML", percentage: "90", color: ""}} />
+            <SkillBar skillData={{skillName:"CSS", percentage: "75", color: "success"}} />
+            <SkillBar skillData={{skillName:"Next.js", percentage: "80", color: "info"}} />
+            <SkillBar skillData={{skillName:"Nest.js", percentage: "70", color: "warning"}} />
+            <SkillBar skillData={{skillName:"Javascript", percentage: "90", color: "danger"}} />
+            <SkillBar skillData={{skillName:"C", percentage: "90", color: "secondary"}} />
+            <SkillBar skillData={{skillName:"C++", percentage: "80", color: "dark"}} />
         </div>
     )
 }
@@ -85,10 +85,10 @@ function AboutSkills (){
 function ProfileInfo() {
     return (
         <div className={`profile-info ${style.text_light_black}  ${style.f_famil_roboto}  `}>
-            <p><span className={` fw-bold ${style.fw_16_px}`}>Name:</span> {profileInfo.name}</p>
-            <p><span className={`fw-bold ${style.fw_16_px}`}>Profile:</span> {profileInfo.profile}</p>
-            <p><span className={`fw-bold ${style.fw_16_px}`}>Email:</span> {profileInfo.email}</p>
-            <p><span className={`fw-bold ${style.fw_16_px}`}>Phone:</span> {profileInfo.phone}</p>
+            <p className={`${style.long_word}`}><span className={` fw-bold ${style.fw_16_px}`}>Name:</span> {profileInfo.name}</p>
+            <p className={`${style.long_word}`}><span className={`fw-bold ${style.fw_16_px}`}>Profile:</span> {profileInfo.profile}</p>
+            <p className={`${style.long_word}`}><span className={`fw-bold ${style.fw_16_px}`}>Email:</span> {profileInfo.email}</p>
+            <p className={`${style.long_word}`}><span className={`fw-bold ${style.fw_16_px}`}>Phone:</span> {profileInfo.phone}</p>
         </div>
     );
 }
@@ -115,10 +115,14 @@ function AboutMe(){
         <div className={`bg-white ${style.about_me}`} >
             <h5 className={`${style.fw_28_px} ${style.f_famil_raleway} fw-bold border-bottom border-primary border-5 mb-4`}>About me</h5>
             <p className={`${style.f_famil_roboto} ${style.fw_18_px} ${style.text_light_black}`}>
-                Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
-                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. porttitor at sem.
-                Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-            </p>
+            Greetings! I'm Soufiane, a tech enthusiast who honed their coding skills at 1337 and is now delving into the captivating realm of software development. My journey began with immersive learning and collaboration at 1337, where I mastered the art of coding through hands-on projects and peer-to-peer education.
+
+            <br/>
+            Building on my foundation in software development, I've pivoted towards the exciting field of advanced software solutions. Fueled by a passion for creating innovative digital landscapes, I'm currently immersed in the complexities of web development, and application programming.
+            <br/>
+
+
+            Leveraging the problem-solving mindset instilled at 1337, I'm navigating the ever-evolving software development landscape, exploring new challenges, and embracing continuous learning. My goal is not just to understand coding principles but to proactively develop robust and efficient software solutions that meet emerging needs.            </p>
         </div>
     )
 }

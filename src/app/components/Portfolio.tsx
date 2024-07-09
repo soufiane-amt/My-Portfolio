@@ -120,12 +120,9 @@ function ProjectsNavBarList ()
 
                                 </a>
                         </li>
-                        {/* <li className="nav-item">
-                            <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList == "Algorithms" ? "text-primary" : ""}`} href="#Algorithms">Algorithms</a>
-                        </li>
                         <li className="nav-item">
                             <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList  == "Graphics" ? "text-primary" : ""}`} href="#Graphics">Graphics</a>
-                        </li> */}
+                        </li>
                         <li className="nav-item">
                             <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList  =="Others" ? "text-primary" : ""}`} href="#Others">Others</a>
                         </li>
