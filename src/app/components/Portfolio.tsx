@@ -15,37 +15,37 @@ const projectList = [
         name : "ft_transcendance",
         type : "Web",
         decription : "Online multiplayers Ping Pong game",
-        imgSrc : "/ProjectElement/app-1.jpg"
+        imgSrc : "/ProjectElement/ft_transcendance.png"
     },
     {
         name : "Webserv",
         type : "Systems Programming",
         decription : "Nginix inspired web server project",
-        imgSrc : "/ProjectElement/product-1.jpg"
+        imgSrc : "/ProjectElement/webserv.webp"
     },
     {
         name : "Inception",
         type : "Containerization",
         decription : "Containerization project",
-        imgSrc : "/ProjectElement/branding-1.jpg"
+        imgSrc : "/ProjectElement/inception.png"
     },
     {
         name : "Minishell",
         type : "Systems Programming",
         decription : "Reimplimentation of a shell interpreter",
-        imgSrc : "/ProjectElement/books-1.jpg"
+        imgSrc : "/ProjectElement/minishell.png"
     },
     {
         name : "ft_containers",
         type : "Systems Programming",
         decription : "C++ Data structures low level programing ",
-        imgSrc : "/ProjectElement/app-2.jpg"
+        imgSrc : "/ProjectElement/ft_containers.webp"
     },
     {
         name : "Cub3D",
         type : "Graphics",
         decription : "Raycasting game project",
-        imgSrc : "/ProjectElement/product-2.jpg"
+        imgSrc : "/ProjectElement/cubTd.webp"
     },
 ]
 
@@ -64,7 +64,7 @@ const ProjectCard: React.FC<{ project: ProjectCardType; index: number }> = ({ pr
     return (
         <div ref={reference} style={{ animationDelay: `${index * 0.5}s` }} className={`${style.project_card} ${style.fade_in} col-lg-4 col-md-6  position-relative`}>
         { (isInView && 
-            <div style={{ animationDelay: `${index * 0.5}s` }} className={`${style.fade_in} ${style.fade_in_up} `}>
+            <div style={{ animationDelay: `${index * 0.1}s` }} className={`${style.fade_in} ${style.fade_in_up} `}>
                                 <div>
                                     <img 
                                         src={`${project.imgSrc}`} 
@@ -97,8 +97,13 @@ function ProjectsNavBarList ()
         // return clearTimeout
     }, [])
     const handleButtonClick = (e:any)=>{
-        const hrefValue = e.target.getAttribute('href').substring(1);
-        setCurrentList(hrefValue);
+        const anchor = (e.target as HTMLElement).closest('a');
+        if (anchor) {
+        const hrefValue = anchor.getAttribute('href');
+        if (hrefValue) {
+            setCurrentList(hrefValue.substring(1));
+        }
+        }
     }
 
     return (
@@ -115,10 +120,8 @@ function ProjectsNavBarList ()
                         <li className="nav-item">
                             <a onClick={handleButtonClick} className={`nav-link ${style.a_} ${style.list_item} ${currentList == "Systems Programming" ? "text-primary" : ""}`} href="#Systems Programming">
                                     <span className={`${style.a_first_word}`}>Systems</span>
-                                        {/* <br/> */}
                                     <span className={`${style.a_last_word}`}>Programming</span>
-
-                                </a>
+                            </a>
                         </li>
                         <li className="nav-item">
                             <a onClick={handleButtonClick} className={`nav-link ${style.list_item} ${currentList  == "Graphics" ? "text-primary" : ""}`} href="#Graphics">Graphics</a>
