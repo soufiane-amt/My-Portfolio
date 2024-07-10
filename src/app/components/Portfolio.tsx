@@ -28,7 +28,7 @@ const projectList = [
     {
         name : "Inception",
         type : "Systems Programming",
-        decription : "Containerization project",
+        decription : "Docker project",
         imgSrc : "/ProjectElement/inception.png",
         url : "https://github.com/soufiane-amt/inception"
     },
@@ -42,7 +42,7 @@ const projectList = [
     {
         name : "ft_containers",
         type : "Systems Programming",
-        decription : "C++ Data structures low level programing ",
+        decription : "C++ Data structures implementing ",
         imgSrc : "/ProjectElement/ft_containers.webp",
         url : "https://github.com/soufiane-amt/ft_containers"
     },
@@ -56,63 +56,63 @@ const projectList = [
     {
         name : "Libft",
         type : "Others",
-        decription : "Reimplementation of C functions in a custom library",
+        decription : "Creation of C custom library",
         imgSrc : "/ProjectElement/libft.png",
         url : "https://github.com/soufiane-amt/Libft"
     },
     {
         name : "Born2beroot",
         type : "Systems Programming",
-        decription : "C++ Data structures low level programing ",
+        decription : "Virtualization project ",
         imgSrc : "/ProjectElement/borntoberoot.png",
         url : "https://github.com/soufiane-amt/"
     },
     {
         name : "Netpractice",
         type : "Others",
-        decription : "Raycasting game project",
+        decription : "Networking project",
         imgSrc : "/ProjectElement/netpractice.png",
         url : "https://github.com/soufiane-amt/NetPractice"
     },
     {
         name : "Philosophers",
         type : "Others",
-        decription : "Reimplementation of C functions in a custom library",
+        decription : "Introduction to processes and threads",
         imgSrc : "/ProjectElement/philosophers.webp",
         url : "https://github.com/soufiane-amt/Philosopher"
     },
     {
         name : "Pipex",
         type : "Others",
-        decription : "C++ Data structures low level programing ",
+        decription : "Reimplemetation of linux CMD pipe",
         imgSrc : "/ProjectElement/pipex.webp",
         url : "https://github.com/soufiane-amt/pipex"
     },
     {
         name : "Get_next_line",
         type : "Others",
-        decription : "Raycasting game project",
+        decription : "Remplementation of get_line",
         imgSrc : "/ProjectElement/get_next_line.webp",
         url : "https://github.com/soufiane-amt/get_next_line"
     },
     {
         name : "So_long",
         type : "Graphics",
-        decription : "Raycasting game project",
+        decription : "2D game project",
         imgSrc : "/ProjectElement/so_long.webp",
         url : "https://github.com/soufiane-amt/so_long"
     },
     {
         name : "Push_swap",
         type : "Others",
-        decription : "Raycasting game project",
+        decription : "Sort data with a limited set of instructions",
         imgSrc : "/ProjectElement/push_swap.webp",
         url : "https://github.com/soufiane-amt/push_swap"
     },
     {
         name : "Ft_printf",
         type : "Others",
-        decription : "Raycasting game project",
+        decription : "Reimplementation of printf function",
         imgSrc : "/ProjectElement/ft_printf.webp",
         url : "https://github.com/soufiane-amt/ft_printf"
     },
