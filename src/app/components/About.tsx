@@ -108,22 +108,25 @@ function AboutContacts ()
     )
 }
 
-function AboutMe(){
+function AboutMe() {
     return (
-        <div className={`bg-white ${style.about_me}`} >
-            <h5 className={`${style.fw_28_px} ${style.f_famil_raleway} fw-bold border-bottom border-primary border-5 mb-4`}>About me</h5>
+        <div className={`bg-white ${style.about_me}`}>
+            <h5 className={`${style.fw_28_px} ${style.f_famil_raleway} fw-bold border-bottom border-primary border-5 mb-4`}>
+                About me
+            </h5>
             <p className={`${style.f_famil_roboto} ${style.fw_18_px} ${style.text_light_black}`}>
-            Greetings! I'm Soufiane, a tech enthusiast who honed their coding skills at 1337 and is now delving into the captivating realm of software development. My journey began with immersive learning and collaboration at 1337, where I mastered the art of coding through hands-on projects and peer-to-peer education.
-
-            <br/>
-            Building on my foundation in software development, I've pivoted towards the exciting field of advanced software solutions. Fueled by a passion for creating innovative digital landscapes, I'm currently immersed in the complexities of web development, and application programming.
-            <br/>
-
-
-            Leveraging the problem-solving mindset instilled at 1337, I'm navigating the ever-evolving software development landscape, exploring new challenges, and embracing continuous learning. My goal is not just to understand coding principles but to proactively develop robust and efficient software solutions that meet emerging needs.            </p>
+                Greetings! I&apos;m Soufiane, a tech enthusiast who honed their coding skills at 1337 and is now delving into the captivating realm of software development. My journey began with immersive learning and collaboration at 1337, where I mastered the art of coding through hands-on projects and peer-to-peer education.
+                <br />
+                <br />
+                Building on my foundation in software development, I&apos;ve pivoted towards the exciting field of advanced software solutions. Fueled by a passion for creating innovative digital landscapes, I&apos;m currently immersed in the complexities of web development and application programming.
+                <br />
+                <br />
+                Leveraging the problem-solving mindset instilled at 1337, I&apos;m navigating the ever-evolving software development landscape, exploring new challenges, and embracing continuous learning. My goal is not just to understand coding principles but to proactively develop robust and efficient software solutions that meet emerging needs.
+            </p>
         </div>
-    )
+    );
 }
+
 
 
 interface aboutProps {

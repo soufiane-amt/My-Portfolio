@@ -71,7 +71,7 @@ const Home: React.FC<homeProps> = ({ setCurrentPage, reference }) => {
     useEffect (()=>{
         if (isInView)
         setCurrentPage("home")
-    }, [isInView])
+    }, [isInView, setCurrentPage])
 
     return (
         <div ref={reference} className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>

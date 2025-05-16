@@ -6,6 +6,8 @@ const useInView = (existingRef: RefObject<HTMLDivElement> | undefined, threshold
   useEffect(() => {
     if (!existingRef?.current) return;
 
+    const target = existingRef.current; 
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -14,16 +16,13 @@ const useInView = (existingRef: RefObject<HTMLDivElement> | undefined, threshold
       {
         root: null,
         rootMargin: '0px',
-        threshold: threshold,
+        threshold,
       }
     );
 
-    observer.observe(existingRef.current);
-
+    observer.observe(target); 
     return () => {
-      if (existingRef.current) {
-        observer.unobserve(existingRef.current);
-      }
+      observer.unobserve(target);
     };
   }, [existingRef, threshold]);
 
@@ -31,4 +30,3 @@ const useInView = (existingRef: RefObject<HTMLDivElement> | undefined, threshold
 };
 
 export default useInView;
-
