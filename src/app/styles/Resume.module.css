@@ -1,38 +1,125 @@
 .resume {
-    margin-block: 150px;
+    margin-block: 80px;
 }
 
-
-.fw_26_px{
-    font-size: 26px;
+.resume_container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    margin-bottom: 30px;
 }
 
-.circle{
+.fw_26_px {
+    font-size: 24px;
+}
+
+.section_header {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section_header_icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.circle {
     position: relative;
 }
 
-.circle::before{
+.circle::before {
     position: absolute;
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    border: 2px solid var(--resume-shapes);
-    left: -13px;
-    top: 3px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    left: -12px;
+    top: 5px;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
 .resume_section {
     position: relative;
+    padding-left: 8px;
+    padding-bottom: 24px;
 }
 
-.resume_section::after{
+.resume_section::after {
     position: absolute;
     content: "";
-    border: 1px solid var(--resume-shapes);
-    height: calc(100% - 10px);
+    border-left: 2px solid #e5e7eb;
+    height: calc(100% - 20px);
     left: -22px;
-    top: 18px;
+    top: 22px;
+}
+
+.resume_section:last-child::after {
+    display: none;
+}
+
+.resume_item {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 4px solid #6366f1;
+    transition: all 0.3s ease;
+}
+
+.resume_item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+}
+
+.resume_title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.resume_duration {
+    display: inline-block;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.resume_subtitle {
+    font-size: 15px;
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.resume_description {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.sub_title_styling {
+    color: #1f2937;
+    font-weight: 700;
 }
 
 .me_setting {
@@ -43,4 +130,57 @@
     .me_setting {
         margin-right: 0px;
     }
+    .resume_container {
+        padding: 24px;
+    }
+}
+
+/* Summary section */
+.summary_box {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.summary_title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.summary_text {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* Project items in resume */
+.project_item {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.project_item:hover {
+    border-color: #6366f1;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+}
+
+.project_name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.project_desc {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
 }

@@ -1,107 +1,179 @@
 .phone_icon {
-    margin-right: 12px;
+    margin-right: 16px;
     border-radius: 50%;
     width: 55px;
     height: 55px;
-    border: 1px solid rgb(0, 120, 255, 0.4);
-    color: #0078ff; /* Default color of the icon */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding-inline: 26px;
-    padding-block: 27px;
-  }
-  .phone_icon i{
-    font-size:larger;
-  }
-/* 
-  .contact p {
-    color: rgb(78, 78, 78);
-  } */
-  
-  /* @media (max-width: 301px) 
-  {
-    .phone_icon {
-      width: 35px;
-      height: 35px;
-    }
-    .phone_icon i{
-      font-size:medium;
-    } 
+    min-width: 55px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    color: #6366f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
 
-  } */
-  
-  .phone_icon:hover {
-    color: white; /* Icon color on hover */
-    background-color: #0078ff; /* Background color on hover */
-    padding: 2x; 
-  }
-  
-  .contacts_board{
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
+.phone_icon i {
+    font-size: 20px;
+}
+
+.phone_icon:hover {
+    color: white;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+.contacts_board {
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 30px !important;
     word-break: break-word;
-  }
+    border: 1px solid #f0f0f0;
+}
 
-  .messager{
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
+.contact_item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0;
+}
 
-  }
+.contact_item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
 
-  .messager input::placeholder,  .messager textarea::placeholder {
-    color: rgb(0, 0, 0, 0.3);
-    font-size: small;
-  }
+.contact_item p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
 
-  .messager button{
-    background-color: #0078ff;
+.contact_redirection {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact_redirection:hover {
+    color: #a855f7;
+    text-decoration: underline;
+}
+
+.messager {
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 30px !important;
+    border: 1px solid #f0f0f0;
+}
+
+.messager input,
+.messager textarea {
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.messager input:focus,
+.messager textarea:focus {
+    border-color: #6366f1;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+.messager input::placeholder,
+.messager textarea::placeholder {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.messager textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.messager button {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
     color: white;
     border: 0;
-    padding-inline: 27px;
-    padding-block: 8px;
-    border-radius: 21px;
-    transition: all 0.5s ease;
-  }
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
 
-  .messager button:hover{
-    background-color: #6b3deb;
-  }
+.messager button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
 
+.messager button:active {
+    transform: translateY(0);
+}
 
-  
-  @keyframes fadeInLeft {
+/* Animations */
+@keyframes fadeInLeft {
     0% {
-       opacity: 0;
-       transform: translateX(-200px);
+        opacity: 0;
+        transform: translateX(-40px);
     }
     100% {
-       opacity: 1;
-       transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
- }
- 
- .fadeInLeft {
-  animation: fadeInLeft 1s ease forwards;
-  opacity: 0;
-} 
+}
 
+.fadeInLeft {
+    animation: fadeInLeft 0.8s ease forwards;
+    opacity: 0;
+}
 
 @keyframes fadeInRight {
-  0% {
-     opacity: 0;
-     transform: translateX(200px);
-  }
-  100% {
-     opacity: 1;
-     transform: translateX(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .fadeInRight {
-animation: fadeInRight 1s ease forwards;
-opacity: 0;
-} 
+    animation: fadeInRight 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
 
-.contact_redirection{
-  all :unset;
-  cursor: pointer;
+/* Form row styling */
+.form_row {
+    display: flex;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .form_row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .contacts_board {
+        padding: 20px !important;
+    }
+    
+    .messager {
+        padding: 20px !important;
+    }
 }

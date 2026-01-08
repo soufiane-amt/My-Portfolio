@@ -1,40 +1,90 @@
 .footer_background {
-    background-color: #076cdd;
-    height: 190px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 60px 20px 40px;
     width: 100vw;
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.footer_background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+}
+
+.footer_content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer_title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.social_container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
 }
 
 .contact_ref {
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.668);
-    color: rgba(255, 255, 255, 0.668);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    padding-block: 8px;
-    padding-inline: 12px;
-    margin-inline: 5px;
-    transition: all 0.5s ease;
-}
-
-.contact_ref:hover{
-    border: 1px solid rgba(255, 255, 255);
-    color: rgba(255, 255, 255);
+    font-size: 18px;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.footer_background p:last-child{
-    font-size: small;
-    color: rgb(238, 229, 229);
+.contact_ref:hover {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
 }
 
-
-.footer_background span {
-    color:  rgba(255, 255, 255, 0.668);
-    transition: all 0.5s ease;
+.footer_divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    margin: 0 auto 24px;
+    border-radius: 1px;
 }
-.footer_background span:hover {
+
+.footer_credit {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.footer_credit span {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    transition: all 0.3s ease;
     cursor: pointer;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
+}
+
+.footer_credit span:hover {
+    color: #a78bfa;
+}
+
+.footer_year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    margin-top: 12px;
 }

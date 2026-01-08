@@ -1,5 +1,6 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import Image from 'next/image';
 import  style from '../styles/Home.module.css';
 import MainBackImg from '@public/myPic.jpg';
@@ -8,10 +9,7 @@ import useInView from '../CostumHooks/UseInView';
 import FadeTop from './FadeTop';
 
 
-const texts = ['Software developper', 'Cyber security enthusiast'];
-
-
-
+const texts = ['Software Developer', 'Cyber Security Enthusiast', 'Full Stack Engineer'];
 
 
 function Introduction()
@@ -29,18 +27,17 @@ function Introduction()
                 setCurrentDisplayedText((prevDisplayedText)=> prevDisplayedText + phraseToDisplay[charIndex])
                 setTimeout(() => {
                     charIndex++;
-                }, 10); // Delay before moving to the next phrase (adjust as needed)
+                }, 10);
             }
             else{
                 clearInterval(interval)
                 setTimeout(() => {
                     setCurrentIndexText(prevIndex => (prevIndex + 1) % texts.length);
-                    console.log(currentDisplayedText)
                     setCurrentDisplayedText('');
-                }, 2000); // Delay before moving to the next phrase (adjust as needed)
+                }, 2000);
             }
         }
-        const interval = setInterval (typeText, 100)
+        const interval = setInterval (typeText, 80)
         return ()=>{
             clearInterval(interval)
         }
@@ -49,12 +46,27 @@ function Introduction()
 
 
     return (
-        <div className={` ${style.home_main} position-absolute start-50 bottom-50 translate-middle d-flex flex-column align-items-center `}>
-            <h2 className={` fade_in_element_3_s text-white ${style.intr_size}`}>I am Soufiane Amajat</h2>
-            <div className={` ${style.typing_text} text-white`}>
+        <div className={`${style.home_main}`}>
+            <p className={`fade_in_element_3_s ${style.greeting_text}`}>Welcome to my portfolio</p>
+            <h1 className={`fade_in_element_3_s text-white ${style.intr_size}`}>
+                I&apos;m <span className={style.name_highlight}>Soufiane Amajat</span>
+            </h1>
+            <div className={`${style.typing_text}`}>
                 {currentDisplayedText}
-
-                <span className={currentDisplayedText.length == texts[currentIndexText].length ? style.blinking_cursor : style.non_blinking_cursor}>&nbsp;</span>
+                <span className={currentDisplayedText.length == texts[currentIndexText].length ? style.blinking_cursor : style.non_blinking_cursor}></span>
+            </div>
+            
+            {/* Social Links */}
+            <div className={style.social_links}>
+                <a href="https://github.com/soufiane-amt" target="_blank" rel="noopener noreferrer" className={style.social_link}>
+                    <i className="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/soufiane-amajat/" target="_blank" rel="noopener noreferrer" className={style.social_link}>
+                    <i className="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:amajatsoufiane@gmail.com" className={style.social_link}>
+                    <i className="bi bi-envelope"></i>
+                </a>
             </div>
         </div>
     )
@@ -74,14 +86,19 @@ const Home: React.FC<homeProps> = ({ setCurrentPage, reference }) => {
     }, [isInView, setCurrentPage])
 
     return (
-        <div ref={reference} className={`${style.home_styling} position-relative overflow-hidden d-flex justify-content-center`}>
+        <div ref={reference} className={`${style.home_styling} position-relative overflow-hidden`}>
             <img
                 src={MainBackImg.src}
                 alt="My picture"
-                className={`img-fluid fade_in_element_5_s ${style.dimmed_image}`}
+                className={`fade_in_element_5_s ${style.dimmed_image}`}
             />
-
-                <Introduction/>
+            <div className={style.home_overlay}></div>
+            <Introduction/>
+            
+            {/* Scroll Indicator */}
+            <div className={style.scroll_indicator}>
+                <div className={style.scroll_indicator_inner}></div>
+            </div>
         </div>
     );
 }

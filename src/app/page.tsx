@@ -21,13 +21,8 @@ export default function MainPage() {
   const portfolioRef = useRef(null);
   const contactRef = useRef(null);
 
-  const handleIntoViewAppearance = (pageHref:string)=>{
-    setCurrentPage(pageHref)
-}
-
-
   return (
-      <div >
+      <div>
         <header>
             <GeneralScrollSpy currentpageState={{currentPage, setCurrentPage}} homeRef={homeRef}
                 aboutRef={aboutRef}
@@ -35,8 +30,8 @@ export default function MainPage() {
                 portfolioRef={portfolioRef} 
                 contactRef={contactRef} />
         </header>
-        <main className="container-fluid p-0 bg-white">
-          <Home  setCurrentPage={setCurrentPage} reference={homeRef}/>
+        <main className="container-fluid p-0">
+          <Home setCurrentPage={setCurrentPage} reference={homeRef}/>
           <About setCurrentPage={setCurrentPage} reference={aboutRef}/>
           <Resume setCurrentPage={setCurrentPage} reference={resumeRef}/>
           <Portfolio setCurrentPage={setCurrentPage} reference={portfolioRef}/>
