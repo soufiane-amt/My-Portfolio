@@ -1,175 +1,119 @@
 "use client";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import ProfileImg from '@public/profile-img.jpg';
 import Image from 'next/image';
-import style from '../styles/About.module.css'
-import { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
-import useInView from '../CostumHooks/UseInView';
-import SectionTitle from './SectionTitle';
+import style from '../styles/About.module.css';
+import { useEffect, useRef, useState } from 'react';
 import FadeTop from './FadeTop';
+import { profileInfo, skills, aboutText } from '../data';
 
-const profileInfo = {
-    name : "Soufiane Amajat",
-    profile : "Software Developer",
-    email : "amajatsoufiane@gmail.com",
-    phone : "+212689398453"
+interface SkillBarProps {
+    skill: { name: string; level: number; color: string };
 }
 
-
-interface SkillDataType{
-    skillName:string, 
-    percentage: string,
-    colorClass: string
-}
-
-const SkillBar: React.FC<{ skillData: SkillDataType }> = ({ skillData }) => {
-    const progressBarRef = useRef<HTMLDivElement>(null);
+const SkillBar: React.FC<SkillBarProps> = ({ skill }) => {
+    const ref = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                        observer.unobserve(entry.target);
-                    }
-                });
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
             },
             { threshold: 0.5 }
         );
-
-        if (progressBarRef.current) {
-            observer.observe(progressBarRef.current);
-        }
-
-        return () => {
-            if (progressBarRef.current) {
-                observer.unobserve(progressBarRef.current);
-            }
-        };
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
     }, []);
 
     return (
-        <div className={style.skill_item}>
+        <div className={style.skill_item} ref={ref}>
             <div className={style.skill_header}>
-                <span className={style.skill_name}>{skillData.skillName}</span>
-                <span className={style.skill_percentage}>{skillData.percentage}%</span>
+                <span className={style.skill_name}>{skill.name}</span>
+                <span className={style.skill_level}>{skill.level}%</span>
             </div>
-            <div className={`${style.h_10px}`} ref={progressBarRef}>
-                <div
-                    className={`${style.progress_bar} ${style[skillData.colorClass]}`}
-                    style={{ width: isVisible ? `${skillData.percentage}%` : '0%' }}
-                ></div>
+            <div className={style.skill_bar}>
+                <div 
+                    className={style.skill_progress}
+                    style={{ 
+                        width: isVisible ? `${skill.level}%` : '0%',
+                        background: `linear-gradient(90deg, ${skill.color}, ${skill.color}88)`
+                    }}
+                />
             </div>
         </div>
     );
 };
 
-function AboutSkills (){
+function InfoCard({ icon, label, value }: { icon: string; label: string; value: string }) {
     return (
-        <div className={style.skills_section}>
-            <h5 className={style.skills_title}>Technical Skills</h5>
-            <SkillBar skillData={{skillName:"HTML", percentage: "90", colorClass: "skill_html"}} />
-            <SkillBar skillData={{skillName:"CSS", percentage: "75", colorClass: "skill_css"}} />
-            <SkillBar skillData={{skillName:"Next.js", percentage: "80", colorClass: "skill_nextjs"}} />
-            <SkillBar skillData={{skillName:"Nest.js", percentage: "70", colorClass: "skill_nestjs"}} />
-            <SkillBar skillData={{skillName:"Javascript", percentage: "90", colorClass: "skill_js"}} />
-            <SkillBar skillData={{skillName:"C", percentage: "90", colorClass: "skill_c"}} />
-            <SkillBar skillData={{skillName:"C++", percentage: "80", colorClass: "skill_cpp"}} />
-        </div>
-    )
-}
-
-
-function ProfileInfo() {
-    return (
-        <div className={style.profile_info_container}>
-            <div className={style.profile_item}>
-                <span className={style.profile_label}>Name</span>
-                <span className={style.profile_value}>{profileInfo.name}</span>
-            </div>
-            <div className={style.profile_item}>
-                <span className={style.profile_label}>Profile</span>
-                <span className={style.profile_value}>{profileInfo.profile}</span>
-            </div>
-            <div className={style.profile_item}>
-                <span className={style.profile_label}>Email</span>
-                <span className={style.profile_value}>{profileInfo.email}</span>
-            </div>
-            <div className={style.profile_item}>
-                <span className={style.profile_label}>Phone</span>
-                <span className={style.profile_value}>{profileInfo.phone}</span>
+        <div className={style.info_card}>
+            <i className={`bi bi-${icon}`}></i>
+            <div>
+                <span className={style.info_label}>{label}</span>
+                <span className={style.info_value}>{value}</span>
             </div>
         </div>
     );
 }
 
+interface aboutProps {}
 
-function AboutContacts ()
-{
+const About: React.FC<aboutProps> = () => {
+    const sectionRef = useRef<HTMLDivElement>(null);
+
     return (
-        <div className={style.about_contacts}>
-            <Image
-                src={ProfileImg}
-                alt="Profile picture"
-            />
-            <ProfileInfo />
-        </div>
-    )
-}
+        <section ref={sectionRef} className={style.about_section}>
+            <div className={style.section_container}>
+                <div className={style.section_header}>
+                    <span className={style.section_label}>Get to know me</span>
+                    <h2 className={style.section_title}>About Me</h2>
+                </div>
 
-function AboutMe() {
-    return (
-        <div className={style.about_me}>
-            <h5 className={style.about_me_title}>
-                About Me
-            </h5>
-            <p className={style.about_text}>
-                Greetings! I&apos;m Soufiane, a tech enthusiast who honed their coding skills at 1337 and is now delving into the captivating realm of software development. My journey began with immersive learning and collaboration at 1337, where I mastered the art of coding through hands-on projects and peer-to-peer education.
-            </p>
-            <p className={style.about_text}>
-                Building on my foundation in software development, I&apos;ve pivoted towards the exciting field of advanced software solutions. Fueled by a passion for creating innovative digital landscapes, I&apos;m currently immersed in the complexities of web development and application programming.
-            </p>
-            <p className={style.about_text}>
-                Leveraging the problem-solving mindset instilled at 1337, I&apos;m navigating the ever-evolving software development landscape, exploring new challenges, and embracing continuous learning.
-            </p>
-        </div>
-    );
-}
+                <FadeTop reference={sectionRef}>
+                    <div className={style.about_grid}>
+                        <div className={style.about_content}>
+                            <div className={style.about_image_wrapper}>
+                                <Image src={ProfileImg} alt="Profile" className={style.about_image} />
+                            </div>
+                        </div>
 
+                        <div className={style.about_text}>
+                            <h3 className={style.about_heading}>
+                                {aboutText.heading}
+                            </h3>
+                            {aboutText.paragraphs.map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
+                            ))}
 
-
-interface aboutProps {
-    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
-    reference : RefObject<HTMLDivElement> | undefined;
-}
-const About: React.FC<aboutProps> = ({ setCurrentPage,reference }) => {
-    const  isInView  = useInView(reference);
-
-    useEffect (()=>{
-        if (isInView)
-            setCurrentPage("about")
-    }, [isInView, setCurrentPage])
-
-    return(
-        <FadeTop reference={reference}>
-            <div ref={reference} className={style.about_container}>
-                <div className='row g-4'>
-                    <div className='col-lg-5'>
-                        <div className='d-flex flex-column'>
-                            <AboutContacts />
-                            <AboutSkills />
+                            <div className={style.info_grid}>
+                                <InfoCard icon="person" label="Name" value={profileInfo.name} />
+                                <InfoCard icon="envelope" label="Email" value={profileInfo.email} />
+                                <InfoCard icon="telephone" label="Phone" value={profileInfo.phone} />
+                                <InfoCard icon="geo-alt" label="Location" value={profileInfo.location} />
+                            </div>
                         </div>
                     </div>
 
-                    <div className='col-lg-7'>
-                        <AboutMe/>
+                    <div className={style.skills_section}>
+                        <h3 className={style.skills_title}>
+                            <i className="bi bi-code-slash"></i>
+                            Technical Skills
+                        </h3>
+                        <div className={style.skills_grid}>
+                            {skills.map((skill) => (
+                                <SkillBar key={skill.name} skill={skill} />
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </FadeTop>
             </div>
-        </FadeTop>
-    )
+        </section>
+    );
 }
 
 export default About;

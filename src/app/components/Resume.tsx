@@ -1,190 +1,157 @@
-'use client'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.min.css';
-import style from '../styles/Resume.module.css'
-import React, { LegacyRef, RefObject, useEffect, useRef, useState } from 'react';
-import useInView from '../CostumHooks/UseInView';
-import SectionTitle from './SectionTitle';
-import FadeTop from './FadeTop';
-import useInViewOnce from '../CostumHooks/UseInViewOnce';
+"use client";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import style from "../styles/Resume.module.css";
+import { RefObject, useEffect, useState } from "react";
+import useInView from "../CostumHooks/UseInView";
+import useInViewOnce from "../CostumHooks/UseInViewOnce";
 
+const summary = {
+  name: "Soufiane Amajat",
+  text: "Motivated software developer with a solid background in computer science and practical experience in software design and development. Skilled in programming with multiple languages, debugging, and performance optimization. Able to quickly adapt to new technologies and work effectively in a team.",
+};
 
-const ResumeSummary = {
-    name : "Amajat Soufiane",
-    summary : "Motivated software developer with a solid background in computer science and initial experience in software design and development. Skilled in programming with multiple languages, debugging, and performance optimization. Able to quickly adapt to new technologies and work effectively in a team."
+const education = [
+  {
+    date: "2021 - 2023",
+    title: "1337 IT School",
+    subtitle: "42 Network Common Core Certificate",
+    description:
+      "Completed a rigorous two-year program focused on peer-to-peer learning, system administration, and hands-on coding projects.",
+  },
+  {
+    date: "2019 - 2021",
+    title: "Hassan II University",
+    subtitle: "Economics Studies",
+    description:
+      "Studied economics and business fundamentals at Hassan II University.",
+  },
+  {
+    date: "2018 - 2019",
+    title: "Moulay Idriss II High School",
+    subtitle: "High School Diploma",
+    description: "Graduated with honors in economic studies.",
+  },
+];
+
+const projects = [
+  {
+    name: "Ft_transcendance",
+    description:
+      "Full-stack web app featuring real-time multiplayer PingPong game with chat system using NestJS & React.",
+  },
+  {
+    name: "Webserv",
+    description:
+      "Custom HTTP server in C++ with efficient request handling and CGI functionality.",
+  },
+  {
+    name: "Inception",
+    description:
+      "Docker-based infrastructure with NGINX, WordPress, and MariaDB containers.",
+  },
+  {
+    name: "Minishell",
+    description:
+      "Shell interpreter implementation inspired by Bash with command execution.",
+  },
+  {
+    name: "ft_containers",
+    description:
+      "Reimplementation of STL containers (vector, stack, map, set) in C++98.",
+  },
+];
+
+interface ResumeProps {
+  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
+  reference: RefObject<HTMLDivElement> | undefined;
 }
 
-const educationInfoArr = [
-    {
-        diplomaName :"High School Diploma",
-        duration: "2018 - 2019" ,
-        location : "Moulay Idriss II High School" ,
-        description : "Graduated with honors in economic studies",
-    },
-    {
-        diplomaName :"Economics Studies",
-        duration: "2019 - 2021" ,
-        location : "Hassan II University" ,
-        description : "Studied for 2 years at Hassan II economics faculty",
-    },
-    {
-        diplomaName :"42 Network Common Core Certificate",
-        duration: "2021 - 2023" ,
-        location : "1337 IT School" ,
-        description : "Completed a two-year Common Core program with a focus on peer-to-peer learning and hands-on networking, Linux, system administration and coding projects.",
-    },
-]
+const Resume: React.FC<ResumeProps> = ({ setCurrentPage, reference }) => {
+  const isInView = useInView(reference);
+  const isInViewOnce = useInViewOnce(reference);
+  const [showContent, setShowContent] = useState(false);
 
+  useEffect(() => {
+    if (isInView) setCurrentPage("resume");
+  }, [isInView, setCurrentPage]);
 
-const academicProjects = [
-    {
-        projectName :"Ft_transcendance",
-        description : "Web application featuring a real-time multiplayer PingPong game with robust chat system."    
-    },
-    {
-        projectName :"Webserv",
-        description : "Collaborative project focused on creating a custom HTTP server with efficient handling of requests and responses."    
-    },
-    {
-        projectName :"Inception",
-        description : "Docker-based system administration project, establishing a secure virtualized infrastructure with NGINX, WordPress, and MariaDB containers."    
-    },
-    {
-        projectName :"Minishell",
-        description : "Collaborative shell interpreter inspired by Bash, emphasizing command execution."    
-    },
-    {
-        projectName :"ft_containers",
-        description : "Reimplementation of several STL containers as defined by C++98, including vector, stack, map, and set."    
-    },
-]
+  useEffect(() => {
+    if (isInViewOnce) {
+      setTimeout(() => setShowContent(true), 200);
+    }
+  }, [isInViewOnce]);
 
-
-interface EductionUnitsType {
-    diplomaName :string,
-    duration: string, 
-    location : string, 
-    description : string
-}
-
-const EductionUnits: React.FC<{educationInfo: EductionUnitsType }> = ({educationInfo}) => 
-{
-    return (
-        <div className={style.resume_item}>
-            <span className={style.resume_duration}>{educationInfo.duration}</span>
-            <h4 className={style.resume_title}>{educationInfo.location}</h4>
-            {educationInfo.diplomaName && (
-                <p className={style.resume_subtitle}>{educationInfo.diplomaName}</p>
-            )}
-            <p className={style.resume_description}>{educationInfo.description}</p>
+  return (
+    <section ref={reference} className={style.resume}>
+      <div className={style.resume_container}>
+        <div className={style.resume_header}>
+          <span className={style.resume_label}>Resume</span>
+          <h2 className={style.resume_title}>My Journey & Experience</h2>
+          <p className={style.resume_subtitle}>
+            A summary of my education and key projects
+          </p>
         </div>
-    )
-}
 
-function ResumeEducation ()
-{
-    return (
-        <div className={style.resume_container}>
-            <h3 className={style.section_header}>
-                <span className={style.section_header_icon}>
-                    <i className="bi bi-mortarboard-fill"></i>
-                </span>
-                Education
-            </h3>
-            {educationInfoArr.map(item => (
-                <EductionUnits key={item.location} educationInfo={item}/>
-            ))}
-        </div>
-    )
-}
+        {isInViewOnce && (
+          <>
+            <div className={style.summary_card}>
+              <h3 className={style.summary_name}>{summary.name}</h3>
+              <p className={style.summary_text}>{summary.text}</p>
+            </div>
 
-function AcademicResume ()
-{
-    return (
-        <div className={style.resume_container}>
-            <h3 className={style.section_header}>
-                <span className={style.section_header_icon}>
-                    <i className="bi bi-code-slash"></i>
-                </span>
-                Academic Projects
-            </h3>
-            <div>
-            {academicProjects.map(project => (
-                <div key={project.projectName} className={style.project_item}>
-                    <h4 className={style.project_name}>{project.projectName}</h4>
-                    <p className={style.project_desc}>{project.description}</p>
+            {showContent && (
+              <div className={style.resume_grid}>
+                <div className={style.resume_section}>
+                  <div className={style.section_header}>
+                    <div className={style.section_icon}>
+                      <i className="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <h3 className={style.section_title}>Education</h3>
+                  </div>
+                  <div className={style.timeline}>
+                    {education.map((item, index) => (
+                      <div key={index} className={style.timeline_item}>
+                        <span className={style.timeline_date}>{item.date}</span>
+                        <h4 className={style.timeline_title}>{item.title}</h4>
+                        <p className={style.timeline_subtitle}>
+                          {item.subtitle}
+                        </p>
+                        <p className={style.timeline_description}>
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-            ))}
-            </div>
-        </div>
-    )
-}
 
-function ResumeSumary ()
-{
-    return (
-        <div className={style.summary_box}>
-            <h3 className={style.summary_title}>
-                <i className="bi bi-person-fill me-2"></i>
-                {ResumeSummary.name}
-            </h3>
-            <p className={style.summary_text}>{ResumeSummary.summary}</p>
-        </div>
-    )
-}
-
-
-interface resumeProps {
-    setCurrentPage : React.Dispatch<React.SetStateAction<string>>;
-    reference : RefObject<HTMLDivElement> | undefined;
-}
-const Resume: React.FC<resumeProps> = ({ setCurrentPage, reference }) => {
-
-    const isInView = useInView(reference);
-    const isInViewOnce = useInViewOnce(reference);
-    const [showFirst, setShowFirst] = useState(false);
-    const [showSecond, setShowSecond] = useState(false);
-  
-    useEffect(() => {
-      if (isInViewOnce) {
-        setShowFirst(true);
-        const timer = setTimeout(() => {
-          setShowSecond(true);
-        }, 300);
-        return () => clearTimeout(timer);
-      }
-    }, [isInViewOnce]);
-  
-    useEffect(() => {
-      if (isInView) {
-        setCurrentPage("resume");
-      }
-    }, [isInView, setCurrentPage]);
-  
-    return (
-        <SectionTitle sectionName='Resume' reference={reference}>
-            <FadeTop reference={reference}>
-                <ResumeSumary/>
-            </FadeTop>
-            <div className='row g-4'>
-                { showFirst &&
-                    <div className='col-lg-6'>
-                        <FadeTop key="1" reference={reference}>
-                            <ResumeEducation/>
-                        </FadeTop>
+                <div className={style.resume_section}>
+                  <div className={style.section_header}>
+                    <div className={style.section_icon}>
+                      <i className="bi bi-code-square"></i>
                     </div>
-                }
-
-                { showSecond &&
-                    <div className='col-lg-6'>
-                        <FadeTop key="2" reference={reference}>
-                            <AcademicResume/>
-                        </FadeTop>
-                    </div>
-                }
-            </div>
-        </SectionTitle>
-    )
-}
+                    <h3 className={style.section_title}>Key Projects</h3>
+                  </div>
+                  <div className={style.project_list}>
+                    {projects.map((project, index) => (
+                      <div key={index} className={style.project_card}>
+                        <h4 className={style.project_name}>
+                          <i className="bi bi-arrow-right-short"></i>
+                          {project.name}
+                        </h4>
+                        <p className={style.project_desc}>
+                          {project.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </section>
+  );
+};
 
 export default Resume;
