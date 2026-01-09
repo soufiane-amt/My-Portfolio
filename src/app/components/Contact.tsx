@@ -24,12 +24,12 @@ const Contact: React.FC<ContactProps> = () => {
         <div className={style.contact_header}>
           <span className={style.contact_label}>Get In Touch</span>
           <h2 className={style.contact_title}>
-            Let's Build Something
+            Let&apos;s Build Something
             <span className={style.title_highlight}> Amazing </span>
             Together
           </h2>
           <p className={style.contact_subtitle}>
-            I'm always open to discussing new projects, creative ideas, or
+            I&apos;m always open to discussing new projects, creative ideas, or
             opportunities to be part of your vision.
           </p>
         </div>
