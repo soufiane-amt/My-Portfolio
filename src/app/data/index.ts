@@ -112,7 +112,7 @@ export const projects: Project[] = [
     name: "SoukNova",
     category: "Web",
     description:
-      "Real-time multiplayer PingPong game with chat system and user authentication.",
+      "SoukNova is a modern e-commerce platform dedicated to selling house decorations.",
     image: "/ProjectElement/souknova.png",
     url: "https://github.com/soufiane-amt/SoukNova",
     liveDemo: "https://souk-nova-front.vercel.app/",
