@@ -2,6 +2,7 @@
 export const navItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "portfolio", label: "Work" },
   { id: "contacts", label: "Contact" },
 ];
@@ -66,6 +67,34 @@ export const aboutText = {
     "Leveraging the problem-solving mindset instilled at 1337, I'm navigating the ever-evolving software development landscape, exploring new challenges, and embracing continuous learning.",
   ],
 };
+
+// Experience Section Data
+export interface Experience {
+  title: string;
+  company: string;
+  location?: string;
+  duration: string;
+  type: string;
+  description: string[];
+  technologies: string[];
+}
+
+export const experiences: Experience[] = [
+  {
+    title: "Full Stack Developer Intern",
+    company: "Flow Digital Transformation",
+    location: "Morocco",
+    duration: "2024",
+    type: "Internship",
+    description: [
+      "Resolved 30+ bugs in an ERP system using Next.js, Nest.js, and PostgreSQL.",
+      "Collaborated with a 7-member development team and followed Scrum methodology.",
+      "Tested and debugged backend services and frontend components to ensure system quality.",
+      "Participated in code reviews and applied modern development practices.",
+    ],
+    technologies: ["Next.js", "Nest.js", "PostgreSQL", "Scrum", "Git"],
+  },
+];
 
 // Portfolio Section Data
 export interface Project {

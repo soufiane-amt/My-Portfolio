@@ -3,6 +3,7 @@ import "./globals.css";
 import GeneralScrollSpy from "./components/GeneralScrollSpy";
 import Home from "./components/Home";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import { useState } from "react";
@@ -23,6 +24,9 @@ export default function MainPage() {
         </section>
         <section id="about">
           <About />
+        </section>
+        <section id="experience">
+          <Experience />
         </section>
         <section id="portfolio">
           <Portfolio />
