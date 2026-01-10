@@ -125,7 +125,7 @@ export const projects: Project[] = [
       "Real-time multiplayer PingPong game with chat system and user authentication.",
     image: "/ProjectElement/ft_transcendance.png",
     url: "https://github.com/soufiane-amt/ft_transcendance",
-    liveDemo: "",
+    liveDemo: "https://ft-transcendance-three.vercel.app/",
     tech: ["NestJS", "React", "PostgreSQL", "WebSocket"],
   },
   {
