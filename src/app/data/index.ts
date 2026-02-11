@@ -56,7 +56,7 @@ export const skills = [
   { name: "Nest.js", level: 70, color: "#e0234e" },
   { name: "React.js", level: 80, color: "#ffffff" },
   { name: "C/C++", level: 85, color: "#00599c" },
-  { name: "Java", level: 55, color: "#3776ab" },
+  { name: "Java", level: 70, color: "#3776ab" },
 ];
 
 export const aboutText = {
