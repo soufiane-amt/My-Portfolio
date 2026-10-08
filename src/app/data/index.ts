@@ -1,4 +1,4 @@
-// Navigation Items
+
 export const navItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -9,12 +9,17 @@ export const navItems = [
 
 // Home Section Data
 export const homeData = {
-  typingTexts: ["Software Developer", "Full Stack Engineer"],
+  typingTexts: [
+    "Full Stack Developer",
+    "Full Stack Engineer",
+    "React & Next.js Developer",
+    "React Native Developer",
+  ],
   name: "Soufiane Amajat",
   greeting: "Hello, I'm",
   description:
-    "Passionate about building innovative software solutions and exploring cybersecurity. Currently focused on full-stack development with modern technologies.",
-  availabilityStatus: "Available for opportunities",
+    "Full Stack Developer building scalable web and mobile applications with TypeScript, React, Next.js, NestJS, and React Native. Experienced in delivering production-ready solutions, optimizing performance, and managing mobile app releases for iOS and Android.",
+  availabilityStatus: "Open to opportunities",
   socialLinks: [
     {
       icon: "bi-github",
@@ -42,29 +47,38 @@ export const homeData = {
 // About Section Data
 export const profileInfo = {
   name: "Soufiane Amajat",
-  profile: "Software Developer",
+  profile: "Full Stack Developer",
   email: "amajatsoufiane@gmail.com",
   phone: "+212689398453",
-  location: "Morocco",
+  location: "Casablanca, Morocco",
   experience: "2+ Years",
 };
 
 export const skills = [
-  { name: "HTML/CSS", level: 90, color: "#e34f26" },
+  { name: "TypeScript", level: 90, color: "#3178c6" },
   { name: "JavaScript", level: 90, color: "#f7df1e" },
-  { name: "Next.js", level: 80, color: "#ffffff" },
-  { name: "Nest.js", level: 70, color: "#e0234e" },
-  { name: "React.js", level: 80, color: "#ffffff" },
+  { name: "React.js", level: 85, color: "#61dafb" },
+  { name: "Next.js", level: 85, color: "#ffffff" },
+  { name: "React Native", level: 85, color: "#61dafb" },
+  { name: "Expo", level: 80, color: "#ffffff" },
+  { name: "NestJS", level: 85, color: "#e0234e" },
+  { name: "Node.js", level: 80, color: "#339933" },
+  { name: "PostgreSQL", level: 80, color: "#4169e1" },
+  { name: "Prisma", level: 80, color: "#5a67d8" },
+  { name: "Docker", level: 75, color: "#2496ed" },
+  { name: "Git", level: 90, color: "#f05032" },
   { name: "C/C++", level: 85, color: "#00599c" },
-  { name: "Java", level: 70, color: "#3776ab" },
+  { name: "Java", level: 70, color: "#e76f00" },
 ];
 
 export const aboutText = {
-  heading: "A passionate developer crafting digital experiences",
+  heading: "Building reliable software from idea to production",
   paragraphs: [
-    "Greetings! I'm Soufiane, a tech enthusiast who honed their coding skills at 1337 and is now delving into the captivating realm of software development. My journey began with immersive learning and collaboration at 1337, where I mastered the art of coding through hands-on projects and peer-to-peer education.",
-    "Building on my foundation in software development, I've pivoted towards the exciting field of advanced software solutions. Fueled by a passion for creating innovative digital landscapes, I'm currently immersed in the complexities of web development and application programming.",
-    "Leveraging the problem-solving mindset instilled at 1337, I'm navigating the ever-evolving software development landscape, exploring new challenges, and embracing continuous learning.",
+    "I'm Soufiane Amajat, a Full Stack Developer based in Casablanca, Morocco. I specialize in building modern web and mobile applications using TypeScript, React, Next.js, NestJS, React Native, and PostgreSQL. I work across the development lifecycle, from designing application features and implementing APIs to improving performance and preparing production releases.",
+
+    "My professional experience includes developing mobile applications, improving enterprise software, and building digital workflows for businesses. At Camelo, I contribute to a content-production platform and its mobile application, including Android and iOS release processes. At Autocash, I worked on mobile field operations, CRM functionality, and administrative tools, contributing to workflows handling more than MAD 500,000 in transactions.",
+
+    "My engineering foundation comes from 1337 (42 Network), where I developed strong problem-solving skills through systems programming, algorithms, networking, and collaborative projects. Across more than 20 projects, I've worked with different teams and technologies, always focusing on maintainable code, practical solutions, and measurable improvements.",
   ],
 };
 
@@ -81,18 +95,69 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    title: "Full Stack Developer Intern",
-    company: "Flow Digital Transformation",
-    location: "Morocco",
-    duration: "2024",
-    type: "Internship",
+    title: "Full Stack & Mobile Developer",
+    company: "Camelo",
+    location: "Casablanca, Morocco",
+    duration: "Sep 2026 – Present",
+    type: "Professional",
     description: [
-      "Resolved 30+ bugs in an ERP system using Next.js, Nest.js, and PostgreSQL.",
-      "Collaborated with a 7-member development team and followed Scrum methodology.",
-      "Tested and debugged backend services and frontend components to ensure system quality.",
-      "Participated in code reviews and applied modern development practices.",
+      "Develop and maintain Camelo's mobile application using React Native, Expo, and TypeScript, providing clients with centralized production tracking, communication, and deliverable approvals.",
+      "Work on application features and integrations supporting project workflows, client feedback, and content production management.",
+      "Configure Android and iOS build environments using Expo Application Services (EAS), including development and production variants.",
+      "Manage mobile release workflows, versioning, and submissions to Google Play Store and Apple App Store.",
+      "Investigate technical issues, improve application reliability, and support production deployments.",
     ],
-    technologies: ["Next.js", "Nest.js", "PostgreSQL", "Scrum", "Git"],
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "React",
+      "EAS Build",
+      "Android",
+      "iOS",
+      "Git",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company: "Autocash (Kazoto SARL)",
+    location: "Casablanca, Morocco",
+    duration: "Mar 2026 – Aug 2026",
+    type: "Professional",
+    description: [
+      "Developed and optimized the React Native Expertise application, digitizing vehicle inspection and field workflows while reducing manual data entry.",
+      "Built purchase-order workflows supporting 5–7 monthly transactions with a combined value exceeding MAD 500,000.",
+      "Implemented CRM and search features that generated more than 50 qualified leads and saved over 10 hours of manual work per week.",
+      "Improved the internal React.js back-office application, enhancing administrative workflows and operational efficiency.",
+    ],
+    technologies: [
+      "React Native",
+      "React.js",
+      "JavaScript",
+      "TypeScript",
+      "CRM",
+      "Git",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company: "Flow Digital Transformation",
+    location: "Rabat, Morocco",
+    duration: "Aug 2024 – Dec 2024",
+    type: "Professional",
+    description: [
+      "Resolved more than 40 bugs across an enterprise ERP system built with Next.js, NestJS, and PostgreSQL.",
+      "Collaborated with a seven-member Scrum team to maintain and improve frontend components and backend services.",
+      "Investigated application issues, implemented fixes, and supported testing and code reviews to improve system reliability.",
+    ],
+    technologies: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Scrum",
+      "Git",
+    ],
   },
 ];
 
@@ -112,70 +177,90 @@ export const projects: Project[] = [
     name: "SoukNova",
     category: "Web",
     description:
-      "SoukNova is a modern e-commerce platform dedicated to selling house decorations.",
+      "Full-stack e-commerce platform supporting 300+ products, authentication, administration, and order management. Improved data retrieval speed by 96% through pagination and Redis caching, reduced API payloads by 69.8%, and optimized search performance by 90%.",
     image: "/ProjectElement/souknova.png",
     url: "https://github.com/soufiane-amt/SoukNova",
     liveDemo: "https://souk-nova-front.vercel.app/",
-    tech: ["NestJS", "React", "PostgreSQL", "WebSocket"],
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "NestJS",
+      "React",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Jest",
+      "Playwright",
+    ],
   },
   {
     name: "Ft_transcendance",
     category: "Web",
     description:
-      "Real-time multiplayer PingPong game with chat system and user authentication.",
+      "Real-time multiplayer ping-pong platform developed in a four-person team, featuring authentication, direct messaging, public and private chat rooms, user blocking, and WebSocket communication supporting 30+ concurrent users.",
     image: "/ProjectElement/ft_transcendance.png",
     url: "https://github.com/soufiane-amt/ft_transcendance",
     liveDemo: "https://ft-transcendance-three.vercel.app/",
-    tech: ["NestJS", "React", "PostgreSQL", "WebSocket"],
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "NestJS",
+      "React",
+      "PostgreSQL",
+      "WebSocket",
+      "Docker",
+    ],
   },
   {
     name: "Webserv",
     category: "Systems",
     description:
-      "Custom HTTP server with efficient request handling and CGI support.",
+      "Custom HTTP server developed in C++ by a three-person team, supporting 100+ concurrent connections, HTTP request processing, configuration management, and CGI execution.",
     image: "/ProjectElement/webserv.webp",
     url: "https://github.com/soufiane-amt/webserv",
-    tech: ["C++", "HTTP", "Networking"],
+    tech: ["C++", "HTTP", "Networking", "Sockets", "CGI"],
   },
   {
     name: "Inception",
     category: "DevOps",
     description:
-      "Docker-based infrastructure with NGINX, WordPress, and MariaDB.",
+      "Containerized multi-service infrastructure using Docker, NGINX, WordPress, and MariaDB, with TLS configuration, persistent volumes, and isolated service networking.",
     image: "/ProjectElement/inception.png",
     url: "https://github.com/soufiane-amt/inception",
-    tech: ["Docker", "NGINX", "MariaDB"],
+    tech: ["Docker", "NGINX", "MariaDB", "Linux", "TLS"],
   },
   {
     name: "Minishell",
     category: "Systems",
     description:
-      "Shell interpreter inspired by Bash with command execution features.",
+      "Unix shell interpreter inspired by Bash, implementing command parsing, pipelines, redirections, environment variables, built-in commands, and process management.",
     image: "/ProjectElement/minishell.png",
     url: "https://github.com/soufiane-amt/minishell",
-    tech: ["C", "Shell", "Unix"],
+    tech: ["C", "Shell", "Unix", "Processes"],
   },
   {
     name: "ft_containers",
     category: "Systems",
     description:
-      "C++ STL containers reimplementation including vector, stack, map, set.",
+      "Reimplementation of standard C++ containers, including vector, stack, map, and set, with custom iterators, templates, and data structures.",
     image: "/ProjectElement/ft_containers.webp",
     url: "https://github.com/soufiane-amt/ft_containers",
-    tech: ["C++", "STL", "Data Structures"],
+    tech: ["C++", "STL", "Templates", "Data Structures"],
   },
   {
     name: "Cub3D",
     category: "Graphics",
-    description: "Raycasting game engine inspired by Wolfenstein 3D.",
+    description:
+      "3D maze exploration game using raycasting techniques, inspired by Wolfenstein 3D, featuring texture rendering, player movement, and map parsing.",
     image: "/ProjectElement/cubTd.webp",
     url: "https://github.com/soufiane-amt/cub3d",
-    tech: ["C", "Raycasting", "miniLibX"],
+    tech: ["C", "Raycasting", "miniLibX", "Graphics"],
   },
   {
     name: "So_long",
     category: "Graphics",
-    description: "2D game project with sprite animations and map parsing.",
+    description:
+      "2D game developed in C with sprite rendering, keyboard controls, map validation, collision handling, and collectible-based gameplay.",
     image: "/ProjectElement/so_long.webp",
     url: "https://github.com/soufiane-amt/so_long",
     tech: ["C", "miniLibX", "Graphics"],
@@ -183,66 +268,74 @@ export const projects: Project[] = [
   {
     name: "Born2beroot",
     category: "DevOps",
-    description: "System administration and virtualization project.",
+    description:
+      "Linux server administration project covering virtualization, SSH, firewall configuration, user permissions, system monitoring, and security policies.",
     image: "/ProjectElement/borntoberoot.png",
     url: "https://github.com/soufiane-amt/",
-    tech: ["Linux", "VM", "Security"],
+    tech: ["Linux", "Virtualization", "SSH", "Security"],
   },
   {
     name: "Netpractice",
     category: "DevOps",
-    description: "Networking fundamentals and TCP/IP configuration project.",
+    description:
+      "Networking exercises focused on IPv4 addressing, routing, subnetting, TCP/IP fundamentals, and network troubleshooting.",
     image: "/ProjectElement/netpractice.png",
     url: "https://github.com/soufiane-amt/NetPractice",
-    tech: ["Networking", "TCP/IP", "Subnetting"],
+    tech: ["Networking", "TCP/IP", "Subnetting", "Routing"],
   },
   {
     name: "Philosophers",
     category: "Systems",
-    description: "Introduction to processes, threads, and mutexes.",
+    description:
+      "Concurrent programming simulation implementing threads, mutexes, resource synchronization, and deadlock prevention.",
     image: "/ProjectElement/philosophers.webp",
     url: "https://github.com/soufiane-amt/Philosopher",
-    tech: ["C", "Threads", "Mutexes"],
+    tech: ["C", "Threads", "Mutexes", "Concurrency"],
   },
   {
     name: "Pipex",
     category: "Systems",
-    description: "Reimplementation of Linux shell pipe functionality.",
+    description:
+      "Unix pipeline implementation handling process creation, file descriptors, command execution, and inter-process communication.",
     image: "/ProjectElement/pipex.webp",
     url: "https://github.com/soufiane-amt/pipex",
-    tech: ["C", "Unix", "Processes"],
+    tech: ["C", "Unix", "Processes", "Pipes"],
   },
   {
     name: "Get_next_line",
     category: "Systems",
-    description: "Function to read a line from a file descriptor.",
+    description:
+      "Buffered file-reading utility in C that retrieves lines from file descriptors while managing memory and persistent read state.",
     image: "/ProjectElement/get_next_line.webp",
     url: "https://github.com/soufiane-amt/get_next_line",
-    tech: ["C", "File I/O", "Memory"],
+    tech: ["C", "File I/O", "Memory Management"],
   },
   {
     name: "Push_swap",
     category: "Systems",
-    description: "Sorting algorithm with limited set of instructions.",
+    description:
+      "Stack-based sorting algorithm designed to sort integer sequences using a restricted instruction set and optimized operation counts.",
     image: "/ProjectElement/push_swap.webp",
     url: "https://github.com/soufiane-amt/push_swap",
-    tech: ["C", "Algorithms", "Sorting"],
+    tech: ["C", "Algorithms", "Sorting", "Stacks"],
   },
   {
     name: "Ft_printf",
     category: "Systems",
-    description: "Reimplementation of printf function.",
+    description:
+      "Custom implementation of the C printf function, supporting formatted output, variadic arguments, and multiple conversion specifiers.",
     image: "/ProjectElement/ft_printf.webp",
     url: "https://github.com/soufiane-amt/ft_printf",
-    tech: ["C", "Variadic", "Formatting"],
+    tech: ["C", "Variadic Functions", "Formatting"],
   },
   {
     name: "Libft",
     category: "Systems",
-    description: "Custom C library with essential functions.",
+    description:
+      "Custom C utility library implementing string manipulation, memory operations, linked lists, and reusable foundational functions.",
     image: "/ProjectElement/libft.png",
     url: "https://github.com/soufiane-amt/Libft",
-    tech: ["C", "Library", "Memory"],
+    tech: ["C", "Library Development", "Memory Management"],
   },
 ];
 
@@ -273,7 +366,7 @@ export const contactMethods = [
   {
     icon: "bi-github",
     title: "GitHub",
-    value: "Check out my repositories",
+    value: "Explore my projects",
     link: "https://github.com/soufiane-amt",
     color: "#8b5cf6",
   },
@@ -287,7 +380,11 @@ export const contactMethods = [
 ];
 
 export const socialLinks = [
-  { icon: "bi-twitter-x", link: "https://twitter.com", label: "Twitter" },
+  {
+    icon: "bi-twitter-x",
+    link: "https://twitter.com",
+    label: "Twitter",
+  },
   {
     icon: "bi-medium",
     link: "https://medium.com/@amajatsoufiane",
